@@ -1,0 +1,361 @@
+<STYLE TYPE="text/css">
+
+TABLE#tblCoolbar 
+
+	{ 
+
+	background-color:threedface; padding:1px; color:menutext; 
+
+	border-width:1px; border-style:solid; 
+
+	border-color:threedhighlight threedshadow threedshadow threedhighlight;
+
+	}
+
+.cbtn
+
+	{
+
+	height:18;
+
+	BORDER-LEFT: threedface 1px solid;
+
+	BORDER-RIGHT: threedface 1px solid;
+
+	BORDER-TOP: threedface 1px solid;
+
+	BORDER-BOTTOM: threedface 1px solid; 
+
+	}
+
+.txtbtn {font-family:tahoma; font-size:70%; color:menutext;}
+
+</STYLE>
+
+
+
+<script LANGUAGE="JavaScript">
+
+function button_over(eButton)
+
+{
+
+    eButton.style.backgroundColor = "#B5BDD6";
+
+    eButton.style.borderColor = "darkblue darkblue darkblue darkblue";
+
+}
+
+function button_out(eButton)
+
+{
+
+    eButton.style.backgroundColor = "threedface";
+
+    eButton.style.borderColor = "threedface";
+
+}
+
+function button_down(eButton)
+
+{
+
+    eButton.style.backgroundColor = "#8494B5";
+
+    eButton.style.borderColor = "darkblue darkblue darkblue darkblue";
+
+}
+
+function button_up(eButton)
+
+{
+
+    eButton.style.backgroundColor = "#B5BDD6";
+
+    eButton.style.borderColor = "darkblue darkblue darkblue darkblue";
+
+    eButton = null; 
+
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+var isHTMLMode=false
+
+var link_parent;
+
+var a_indhold;
+
+var get_link;
+
+var image_selection;
+
+
+
+function cmdExec(cmd,opt) 
+
+{
+
+    if (isHTMLMode){alert("Please uncheck 'Edit HTML'");return;}
+
+    idContent.document.execCommand(cmd,"",opt);idContent.focus();
+
+}
+
+function setMode(bMode)
+
+{
+
+    var sTmp;
+
+    isHTMLMode = bMode;
+
+    if (isHTMLMode){sTmp=idContent.document.body.innerHTML;idContent.document.body.innerText=sTmp;} 
+
+    else {sTmp=idContent.document.body.innerText;idContent.document.body.innerHTML=sTmp;}
+
+    idContent.focus();
+
+}
+
+function get_selection()
+
+{
+
+	return idContent.document.selection.createRange();
+
+}
+
+function get_element_tag(sTag,start)
+
+{
+
+	  while ((start!=null) && (start.tagName!=sTag))
+
+	    start = start.parentElement
+
+	  return start
+
+}
+
+
+
+function createLink()
+
+{
+
+    if (isHTMLMode){alert("Please uncheck 'Edit HTML'");return;}
+
+    if( idContent.document.selection.type=='Control' ) return; 
+
+    
+
+    link_parent = 0;
+
+    get_link = get_element_tag("A",get_selection().parentElement());
+
+    
+
+	if( get_link!=null )
+
+    {
+
+        link_parent = 1;
+
+	 	a_href = get_link.href;
+
+		a_indhold = get_link.innerText;
+
+	}
+
+	else
+
+    {
+
+		if (idContent.document.selection.type=="Text")
+
+        {
+
+		     get_link = get_selection();
+
+		     a_indhold = get_link.text;
+
+		     a_href = "http:\/\/"; 
+
+		}
+
+		if (idContent.document.selection.type=="None")
+
+        {
+
+		     a_href = "http:\/\/"; 
+
+		     get_link = get_selection();
+
+        }
+
+	}
+    prop_str = "resizable=no,scrollbars=auto,toolbar=no,location=no,directories=no,status=no,";
+
+    prop_str += "width=210,height=130";
+    window.open("link_editor/link_editor.php?url="+ a_href,"links",prop_str);
+
+}
+
+function new_link(str)
+
+{
+
+    if(link_parent==1)
+
+    {
+
+        get_link.outerHTML = str;
+
+    }
+
+    else
+
+    {
+
+        get_link.pasteHTML(str);
+
+    }
+
+}
+
+
+
+function Save() 
+
+{
+
+    if (isHTMLMode){alert("Please uncheck 'Edit HTML'");return;}
+
+    document.my_form.check_list.value =  idContent.document.body.innerHTML;
+
+}
+
+function startEditor()
+
+{
+
+    idContent.document.body.innerHTML = document.my_form.check_list.value;
+
+}
+
+function initEditor()
+{
+    if( document.my_form.check_list )
+    {
+         header = '<html><head><style>body{font-family:verdana,sans-serif;font-size:11px;}</style>';
+         header += '</head><body>';
+         footer = '</body></html>';
+
+         idContent.document.designMode = "On";
+         idContent.document.open();
+         idContent.document.write(header);
+         idContent.document.write(document.my_form.check_list.value);
+         idContent.document.write(footer);
+         idContent.document.close();
+         idContent.focus();
+    }
+}
+</script>
+
+ 
+
+<table id="tblCoolbar" width="380" cellpadding="0" cellspacing="0" border="0">
+
+<tr valign="middle">
+
+
+
+	<td><div class="cbtn" onClick="cmdExec('cut')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="1" vspace=1 align=absmiddle src="images/Cut.gif" alt="Cut">
+
+	</div></td>
+
+	
+
+	<td><div class="cbtn" onClick="cmdExec('copy')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="1" vspace=1 align=absmiddle src="images/Copy.gif" alt="Copy">
+
+	</div></td>	
+
+	
+
+	<td><div class="cbtn" onClick="cmdExec('paste')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="1" vspace=1 align=absmiddle src="images/Paste.gif" alt="Paste">
+
+	</div></td>	
+
+	
+
+	<td><div class="cbtn" onClick="cmdExec('bold')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="1" vspace=1 align=absmiddle src="images/Bold.gif" alt="Bold">
+
+	</div></td>
+
+	
+
+	<td><div class="cbtn" onClick="cmdExec('italic')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="1" vspace=1 align=absmiddle src="images/Italic.gif" alt="Italic">
+
+	</div></td>	
+
+	
+
+	<td><div class="cbtn" onClick="cmdExec('underline')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="1" vspace=1 align=absmiddle src="images/Under.gif" alt="Underline">
+
+	</div></td>		
+
+		
+
+	<td><div class="cbtn" onClick="cmdExec('insertorderedlist')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="2" vspace=1 align=absmiddle src="images/numlist.GIF" alt="Ordered List">
+
+	</div></td>	
+
+
+
+	<td><div class="cbtn" onClick="cmdExec('insertunorderedlist')" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="2" vspace=1 align=absmiddle src="images/bullist.GIF" alt="Unordered List">
+
+	</div></td>
+
+		
+
+
+
+	<td><div class="cbtn" onClick="createLink();" onmouseover="button_over(this);" onmouseout="button_out(this);" onmousedown="button_down(this);" onmouseup="button_up(this);">
+
+	<img hspace="2" vspace=1 align=absmiddle src="images/Link.gif" alt="Link">
+
+	</div></td>	
+
+
+
+	<td> <input type="checkbox" onclick="setMode(this.checked)"><span style="font-size:12px;font-weight:900;">HTML</span></td>	
+
+</tr>
+
+</table>
+
+
+
+<iframe width="380" id="idContent" height="325"></iframe> 
+
+<textarea name="check_list" style="visibility:hidden;height=0px;widht:0px;">{check_list_content}</textarea>
+

@@ -1,0 +1,261 @@
+#BODY
+{
+	color:#000000;
+    font-family:verdana,sans-serif;
+    font-size:10px;
+}
+#TD
+{
+	color:#000000;
+    font-family:verdana,sans-serif;
+    font-size:10px;
+}
+.header
+{
+    color:#333333;
+    font-family:verdana,sans-serif;
+    font-size:18;
+    font-weight : bold;
+    padding-left : 10px;
+}
+.header2
+{
+    color:#333333;
+    font-family:verdana,sans-serif;
+    font-size:35;
+    font-weight : bold;
+}
+.small_header
+{
+    color:#333333;
+    font-family:verdana,sans-serif;
+    font-size:11px;
+    font-weight : bold;
+    padding-left : 10px;
+}
+.tabelText
+{
+   color:#736E72;
+   font-family:verdana,sans-serif;
+   font-size:11px;
+	padding-left :10px;
+	font-weight : bold;
+   text-decoration: none;
+}
+
+.plainText
+{
+    color:#000000;
+    font-family:verdana,sans-serif;
+    font-size:11px;
+}
+
+.alert_message
+{
+   color:#CC0000;
+   font-family:verdana,sans-serif;
+   font-size:14px;
+	font-weight:bold;
+	padding-left : 10;
+   padding-top : 5;
+}
+
+/* STYLE DEFINITIONS FOR FANEBLADE */
+.faneblad_selected
+{
+   color:#FFFFFF;
+   font-family:verdana,sans-serif;
+   font-size:11px;
+	font-weight : bold;
+	background-color : #736E72;
+	padding-top : 2;
+}
+.faneblad_unselected
+{
+  	color:#FFFFFF;
+  	font-family:verdana,sans-serif;
+  	font-size:11px;
+	font-weight : bold;
+	background-color : #9D999C;
+	padding-top : 2;
+}
+/* END FANEBLADE STYLES  */
+
+/* STYLE DEFINITIONS FOR BUTTONS */
+.knap
+{
+  	color:#FFFFFF;
+  	background-color:#CC6600;
+  	font-family:verdana,sans-serif;
+  	font-size:11px;
+	font-weight : bold;
+	width : 75px;
+}
+.medium_knap
+{
+  	color:#FFFFFF;
+  	background-color:#CC6600;
+  	font-family:verdana,sans-serif;
+  	font-size:11px;
+	font-weight : bold;
+	width : 100px;
+}
+.stor_knap
+{
+  color:#FFFFFF;
+  background-color:#CC6600;
+  font-family:verdana,sans-serif;
+  font-size:11px;
+	font-weight : bold;
+	width : 125px;
+}
+/* END STYLING BUTTONS  */
+
+
+.top_nav_link
+{
+	color:#FFFFFF;
+  	font-family:verdana,sans-serif;
+	font-size : 12px;
+	font-weight:bold;
+	text-decoration : none;
+}
+a:hover.top_nav_link
+{
+	color:#999999;
+	text-decoration : none;
+}
+.top_nav_link_on
+{
+	color:#000000;
+	background-color:#FFFFFF;
+  	font-family:verdana,sans-serif;
+	font-size : 12px;
+	font-weight:bold;
+	text-decoration : none;
+}
+a:hover.top_nav_link_on
+{
+	color:#000000;
+	text-decoration : none;
+}
+.tdborder_content
+{
+	 border-top:3px solid #736E72;
+	 border-right:1px solid #736E72;
+	 border-left:1px solid #736E72;
+	 border-bottom:3px solid #736E72;
+}
+.content_body
+{
+	margin: 40px;
+	margin-top:60px;
+	color:#000000;
+  font-family:verdana,sans-serif;
+  font-size:10px;
+}
+.tdpadtext
+{
+	font-family: Verdana,sans-serif;
+	font-size:11px;
+	font-weight: bold;
+    padding-left : 10;
+    padding-top : 5;
+ }
+ .tdText
+{
+	font-family:verdana,sans-serif;
+	font-size:11px;
+	font-weight:bold;
+  padding-left : 12;
+}
+.tablebg_color
+{
+	background : #FFF0A4;
+	background-color : #FFF0A4;
+	height : 225px;
+}
+
+/* STYLE DEFINITIONS FOR THE TREE STRUCTURE /// ADMIN */
+.nodeName{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#000000; }
+.nodeName:link{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#000000; }
+.nodeName:active{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#000000; }
+.nodeName:visited{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#000000; }
+.nodeName:hover{text-decoration: underline;}
+
+.nodeName{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#cdcdcd; }
+.nodeName_gray{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#cdcdcd; }
+.nodeName_gray:link{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#cdcdcd; }
+.nodeName_gray:active{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#cdcdcd; }
+.nodeName_gray:visited{font-family:verdana,sans-serif;font-size:12px;text-decoration:none;color:#cdcdcd; }
+.nodeName_gray:hover{text-decoration: underline;}
+
+.textfield{font-family:verdana,sans-serif;font-size:12px;color:#000000; }
+.hide{ visibility:hidden; }
+/* END TREE STRUCTURE STYLE */
+
+/* STYLE DEFINITIONS FOR INPUT FIELDS /// EVERYWHERE NEEDED */
+.input
+{
+    color:#000000;
+    font-family:verdana,sans-serif;
+    font-size:11px;
+		width: 300px;
+}
+/* END INPUT STYLE  */
+
+/* STYLE DEFINITIONS FOR SELECT FIELDS /// EVERYWHERE  NEEDED*/
+.select_list
+{
+	width : 200px;
+	font-family:verdana,sans-serif;
+  font-size:11px;
+}
+
+.select_list_small
+{
+	width : 110px;
+	font-family:verdana,sans-serif;
+  font-size:11px;
+}
+/* END SELECT FIELDS STYLE */
+
+/* Main Colors used for tables */
+.color1
+{
+	background : #FFF0A4;
+	background-color : #FFF0A4;
+}
+.color2
+{
+	background : #FFCE63;
+	background-color : #FFCE63;
+}
+.color3
+{
+	background : #CC6600;
+	background-color : #CC6600;
+}
+/*End Main Colors used for tables */
+
+
+/* STYLE DEFINITIONS FOR BOTTOM FRAME  */
+.bottom_frame_text{
+	font-family: verdana,sans-serif;
+	font-size : 10;
+	color : #FFFFFF;
+	padding-top : 3px;
+}
+/*End BOTTOM FRAME Styling*/
+
+/* STYLE DEFINITIONS FOR HELP SECTION  */
+.cellStyle{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	font-weight: bold;
+	padding-left : 10px;
+	padding-right : 25px;
+	padding-bottom : 5px; 
+}
+/*End HELP Styling*/
+

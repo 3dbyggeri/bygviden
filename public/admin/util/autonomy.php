@@ -1,0 +1,5 @@
+<?php
+$DRE_HOST = '127.0.0.1';
+$DRE_QUERY_PORT = '7000';
+$DRE_INDEX_PORT = '7001';
+?>

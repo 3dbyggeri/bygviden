@@ -1,0 +1,82 @@
+a:link
+{
+	text-decoration: underline;
+	color: #074B8A;
+}
+a:hover
+{
+	color: #DF002B;
+	text-decoration: underline;
+}
+a:visited
+{
+	text-decoration: underline;
+	color: #05335D;
+}
+a:visited:hover
+{
+	color: #DF002B;
+	text-decoration: underline;
+}
+a.tilforside
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:hover.tilforside
+{
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+a:visited.tilforside
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:visited:hover.tilforside
+{
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+a.naviitemactive
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:hover.naviitemactive
+{
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+a:visited.naviitemactive
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:visited:hover.naviitemactive
+{
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+a.naviitem
+{
+	text-decoration: none;
+	color: #000000;
+}
+a:hover.naviitem
+{
+	text-decoration: underline;
+	color: #000000;
+}
+a:visited.naviitem
+{
+	text-decoration: none;
+	color: #000000;
+}
+a:visited:hover.naviitem
+{
+	text-decoration: underline;
+	color: #000000;
+}

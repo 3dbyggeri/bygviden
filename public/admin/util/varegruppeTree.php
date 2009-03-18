@@ -1,0 +1,39 @@
+<?php
+/**
+ ** Especialize agent tree
+ ** @author Ronald
+ **/
+class varegruppeTree extends tree
+{
+  function add( $id )
+  {
+      global $user;
+      if( !$id || !is_numeric( $id ) ) return;
+
+      //Get the highest position among the comming siblings
+      $n = $this->getHighestPositionFromChildrens( $id );
+      $n++;
+
+      //add the child
+      $sql = "INSERT INTO
+                  " .$this->table ."
+              (
+                  name,
+                  parent,
+                  position
+              )
+              VALUES
+              (
+                  'NY VAREGRUPPE',
+                   $id,
+                   $n
+              )";
+      $this->dba->exec( $sql );
+      
+      //get the new node id
+      $last_id = $this->dba->last_inserted_id();
+
+      //open the parent node
+      $this->open( $id );
+  }
+}

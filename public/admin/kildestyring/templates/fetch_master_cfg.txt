@@ -1,0 +1,102 @@
+[LICENSE]
+HOLDER=Autonomy
+KEY=3169Z89694922315X4C307Z9945059
+Full=0
+
+[SERVICE]
+//PROXYHOST=proxy.dir.dk
+//PROXYPORT=3128
+//PROXYUSERNAME=bygviden
+//PROXYPASSWORD=HnYQc0kb
+
+SERVICEPORT=40010
+SERVICECONTROLCLIENTS=*
+SERVICESTATUSCLIENTS=*
+
+[DEFAULT]
+// DRE settings - should point to your document DRE
+DREHOST=127.0.0.1
+INDEXPORT=9002
+// DRE Database to use (default) for documents
+DATABASE=diverse
+// Log file to use for logging the detailed request and URL information
+LOG FILE=spider.log
+// Number of sockets to use in parallel.
+NSOCKETS=16
+// Run the spiders every 24 hours
+SPIDERREPEATSECS=86400
+// Run forever
+SPIDERCYCLES=-1
+// Maximum depth to spider to follow 99 links deep from the front page
+DEPTH=99
+// Start at 3am
+SPIDERSTARTTIME=NOW
+// Spider for 12 hours MAXIMUM
+SITEDURATION=43200
+// Only get 2000 pages maximum
+MAXPAGES=20000
+// Strip the text associated with links from a page - it is probably not to do with the page
+// but in fact the linked page
+IMPORTSTRIPLINKS=ON
+// Follow HTTP redirects
+FOLLOWREDIRECT=TRUE
+// Ensure spiders don't leave the initial URL server
+STAYONSITE=TRUE
+// Throw out pages smaller than 4090 bytes - usually framesets etc.
+MINPAGESIZE=500
+// Maximum page size 160k
+MAXPAGESIZE=163840000
+// Throw out pages (AFTER following links) if they have more than 50 links - get rid of indices
+MAXLINKSPERPAGE=200
+// Only wait 100 seconds for data
+PAGETIMEOUT=100
+// As a news fetch we want no URLs containing the word archive - any case
+CANTHAVECHECK=129
+CANTHAVECSVS=*archive*
+// Save pages that were modified between 365 days ago and 7 days in the future
+AFTERDATE=-9999
+BEFOREDATE=7
+// Who to spider as, i.e. what will be sent as the user agent.
+SPIDERAS=Vizion Spider
+// Some default date formats typically seen
+DATEFORMATS=DDMMYYYY,YYMMDD,YYMMD,DDMONTHYYYY,LONGMONTH DD,MMDDYY,MMDD
+// Import every 200 pages as they arrive
+BATCHPROCESS=IMPORT
+BATCHSIZE=200
+// Extract meta tags into DRE fields - ON
+IMPORTMETATOFIELDS=ON
+// Be polite to external sites! You can alter these but beware of the consequences for the sites you spider
+FOLLOWROBOTPROTOCOL=FALSE
+// Wait between requests from a given site for 30 seconds to be nice to the remote site!
+PAGEDELAY=30
+// Import first 3 sentences as summaries
+//IMPORTSUMMARY=on
+IMPORTINTELLIGENTTITLESUMMARY=on
+
+//Store the site structure
+STORESITESTRUCTURE=on
+//DELETE 404 DOCUMENTS FROM DRE
+DELETEPROCESS=DREREMOVE
+
+// Store textual content in the DRE
+IMPORTSTORECONTENT=true
+// Remove duplicates by reference
+INDEXMODE=REFERENCE
+// Remove duplicates with a 90% conceptual match or by reference
+//INDEXMODE=REFERENCEMATCH90
+// Index over socket - allows DRE to be on another machine
+INDEXOVERSOCKET=on
+// Remember the site structure to make respidering more efficient
+storesitestructure=on
+// Now break large documents into conceptual paragraph chunks
+IMPORTBREAKING=ON
+ImportBreakingMinParagraphWords=300
+ImportBreakingMaxParagraphWords=500
+ImportBreakingMinDocWords=500
+// Don't bother indexing anything less than 10 words!
+ImportMinLengthWords=10
+// Don't bother indexing anything less than 100 bytes after import
+ImportMinLength=100
+
+[SPIDER]
+NUMBER={number_of_spiders}

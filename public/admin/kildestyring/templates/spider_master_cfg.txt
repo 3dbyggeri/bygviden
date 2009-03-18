@@ -1,0 +1,4 @@
+[{spider_name}]
+URL={url}
+DIRECTORY={dir_name}
+LOG FILE={log_name}
