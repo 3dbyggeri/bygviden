@@ -20,6 +20,8 @@
     /*                                                                   */
     /*********************************************************************/
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/../config/environment.php');
+
     class dba
     {
     	var $host;
@@ -30,7 +32,7 @@
         var $prefix;
 
 
-function dba( $db ="bygviden",$host="localhost",$user="bygviden",$password="32ReCvQa",$prefix="dev_")
+function dba( $db =DATABASE_NAME,$host=DATABASE_HOST,$user=DATABASE_USER,$password=DATABASE_PASS,$prefix=DATABASE_PREFIX)
 {
 		$this->host = $host;
 		$this->user= $user;
