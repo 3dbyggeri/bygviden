@@ -1,1 +1,63 @@
-TODO
+= Folder content
+
+[config/]  Contains database and environment specific configuration files
+
+[db/]      Contains database migrations
+
+[lib/]     Contains 3rd party libraries added to the system after 
+           2009-19-03
+
+[public/]  The actual web-root
+
+[public/admin/]             Administration interface
+
+[public/BACK1/]             Autonomy stuff - not used anymore
+
+[public/BANNER_ADMIN/]      Ad management interface (so the sales people 
+                            can log in and manage campaigns) - maybe not 
+                            used anymore
+
+[public/bibs/]              vidensleverandøraftale - maybe not used 
+                            anymore
+
+[public/BV_/]               Autonomy stuff - not used anymore
+
+[public/chimp/]             MailChimp library / module
+
+[public/DEV/]               Screencast - not used anymore
+
+[public/FREE_BYG_CONTENT/]  Free content not hosted by the owner
+
+[public/graphics/]          Misc images
+
+[public/img/]               Misc images
+
+[public/logo/]              Misc images
+
+[public/nyhedsbrev/]        Newsletter stuff - maybe not used anymore
+
+[public/page/]              Frontend core - Used to showing pages
+
+[public/pagetema/]          Frontend core - templates
+
+[public/product_images/]    Product images
+
+[public/styles/]            CSS
+
+[public/tema/]              Frontend core - teamasider
+
+[public/TIL_BYG_CONTENT/]   Protected content not hosted by the owner
+
+[public/TMP/]               Temp folder (maybe used by PDF generator) - 
+                            maybe not used anymore
+
+[public/tolerancer/]        Misc images actually used by the 
+                            tolerancer.dk domain (should not be hosted 
+                            here!)
+
+[public/users/]             Frontend core - User management
+
+[public/view/]              Frontend core - Displaying of documents 
+                            (some are hosted on 3rd party servers, but 
+                            all are requested through here so we can 
+                            record usage and authenticate the user)
