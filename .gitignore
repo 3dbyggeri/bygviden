@@ -1,2 +1,5 @@
 .DS_Store
 db/schema.rb
+public/FREE_BYG_CONTENT
+public/TIL_BYG_CONTENT
+public/phpinfo.php

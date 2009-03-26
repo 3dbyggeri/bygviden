@@ -238,7 +238,7 @@ class MinSide extends View
                 </p>
 
                 <p>
-                  <a target="_blank" href="http://www.bygviden.dk/Guide_Producentdata.pdf">Mere hj&aelig;lp &#187;</a>
+                  <a target="_blank" href="http://www.bygviden.dk/download/minside/Guide_Producentdata.pdf">Mere hj&aelig;lp &#187;</a>
                 </p>
               </div>
              ';
@@ -268,7 +268,7 @@ class MinSide extends View
                   </p>
 
                   <p>
-                  <a target="_blank" href="http://www.bygviden.dk/Guide_Producentdata.pdf">Mere hj&aelig;lp &#187;</a>
+                  <a target="_blank" href="http://www.bygviden.dk/download/minside/Guide_Producentdata.pdf">Mere hj&aelig;lp &#187;</a>
                 </p>
                 
               </div>
@@ -285,7 +285,7 @@ class MinSide extends View
                  bygviden.dk og i nyhedsbrevet.
                 </p>
                 <p>
-                  <a target="_blank" href="http://www.bygviden.dk/Guide_Producentdata.pdf">Mere hj&aelig;lp &#187;</a>
+                  <a target="_blank" href="http://www.bygviden.dk/download/minside/Guide_Producentdata.pdf">Mere hj&aelig;lp &#187;</a>
                 </p>
               </div>
              ';
