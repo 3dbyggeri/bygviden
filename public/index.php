@@ -232,13 +232,21 @@ $add_key_word = urlencode($add_key_word);
             </table>
         </div>
 
-  <script language="JavaScript" type="text/javascript" src="http://ssl.siteimprove.com/js/siteanalyze.js"></script>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+<?php
+if($_SERVER['HTTP_HOST'] == "www.bygviden.dk") {
+?>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-_uacct = "UA-2127559-1";
-urchinTracker();
-</script>
+try {
+var pageTracker = _gat._getTracker("UA-8100842-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<?php
+}
+?>
 
 
     </body>
