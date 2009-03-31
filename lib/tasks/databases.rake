@@ -215,7 +215,7 @@ namespace :db do
     desc "Create a db/schema.rb file that can be portably used against any DB supported by AR"
     task :dump => :environment do
       require 'active_record/schema_dumper'
-      File.open(ENV['SCHEMA'] || "#{RAILS_ROOT}/db/schema.rb", "w") do |file|
+      File.open(ENV['SCHEMA'] || "#{BYGVIDEN_ROOT}/db/schema.rb", "w") do |file|
         ActiveRecord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
       end
       Rake::Task["db:schema:dump"].reenable
@@ -223,7 +223,7 @@ namespace :db do
 
     desc "Load a schema.rb file into the database"
     task :load => :environment do
-      file = ENV['SCHEMA'] || "#{RAILS_ROOT}/db/schema.rb"
+      file = ENV['SCHEMA'] || "#{BYGVIDEN_ROOT}/db/schema.rb"
       load(file)
     end
   end
@@ -235,7 +235,7 @@ namespace :db do
       case abcs[BYGVIDEN_ENV]["adapter"]
       when "mysql", "oci", "oracle"
         ActiveRecord::Base.establish_connection(abcs[BYGVIDEN_ENV])
-        File.open("#{RAILS_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql", "w+") { |f| f << ActiveRecord::Base.connection.structure_dump }
+        File.open("#{BYGVIDEN_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql", "w+") { |f| f << ActiveRecord::Base.connection.structure_dump }
       when "postgresql"
         ENV['PGHOST']     = abcs[BYGVIDEN_ENV]["host"] if abcs[BYGVIDEN_ENV]["host"]
         ENV['PGPORT']     = abcs[BYGVIDEN_ENV]["port"].to_s if abcs[BYGVIDEN_ENV]["port"]
@@ -253,13 +253,13 @@ namespace :db do
       when "firebird"
         set_firebird_env(abcs[BYGVIDEN_ENV])
         db_string = firebird_db_string(abcs[BYGVIDEN_ENV])
-        sh "isql -a #{db_string} > #{RAILS_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql"
+        sh "isql -a #{db_string} > #{BYGVIDEN_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql"
       else
         raise "Task not supported by '#{abcs["test"]["adapter"]}'"
       end
 
       if ActiveRecord::Base.connection.supports_migrations?
-        File.open("#{RAILS_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql", "a") { |f| f << ActiveRecord::Base.connection.dump_schema_information }
+        File.open("#{BYGVIDEN_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql", "a") { |f| f << ActiveRecord::Base.connection.dump_schema_information }
       end
     end
   end
@@ -271,7 +271,7 @@ def drop_database(config)
     ActiveRecord::Base.establish_connection(config)
     ActiveRecord::Base.connection.drop_database config['database']
   when /^sqlite/
-    FileUtils.rm(File.join(RAILS_ROOT, config['database']))
+    FileUtils.rm(File.join(BYGVIDEN_ROOT, config['database']))
   when 'postgresql'
     ActiveRecord::Base.establish_connection(config.merge('database' => 'postgres', 'schema_search_path' => 'public'))
     ActiveRecord::Base.connection.drop_database config['database']
