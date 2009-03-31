@@ -6,14 +6,14 @@ development:
 
 qa:
   adapter: mysql
-  host: db03
+  host: db02
   database: bygviden_qa
   username: bygviden_qa
   password: secret
 
 production:
   adapter: mysql
-  host: db03
+  host: db02
   database: bygviden_production
-  username: bygviden_production
+  username: bygviden_prod
   password: secret
