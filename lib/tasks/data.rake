@@ -4,7 +4,7 @@ namespace :db do
     task :load => :environment do
       raise "Usage: rake db:data:load file=[filename]" unless ENV.member? 'file'
 
-      conf = ActiveRecord::Base.configurations[RAILS_ENV]
+      conf = ActiveRecord::Base.configurations[BYGVIDEN_ENV]
       user = conf['username']
       pass = conf['password']
       host = conf['host']

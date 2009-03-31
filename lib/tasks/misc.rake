@@ -1,5 +1,5 @@
 task :rails_env do
-  unless defined? RAILS_ENV
-    RAILS_ENV = ENV['RAILS_ENV'] ||= 'development'
+  unless defined? BYGVIDEN_ENV
+    BYGVIDEN_ENV = ENV['BYGVIDEN_ENV'] ||= 'development'
   end
 end

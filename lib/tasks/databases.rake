@@ -6,7 +6,7 @@ namespace :db do
   end
 
   task :environment => :load_config do
-    ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations[RAILS_ENV]) 
+    ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations[BYGVIDEN_ENV]) 
   end
 
   namespace :create do
@@ -31,9 +31,9 @@ namespace :db do
     end
   end
 
-  desc 'Create the database defined in config/database.yml for the current RAILS_ENV'
+  desc 'Create the database defined in config/database.yml for the current BYGVIDEN_ENV'
   task :create => :load_config do
-    create_database(ActiveRecord::Base.configurations[RAILS_ENV])
+    create_database(ActiveRecord::Base.configurations[BYGVIDEN_ENV])
   end
 
   def create_database(config)
@@ -96,9 +96,9 @@ namespace :db do
     end
   end
 
-  desc 'Drops the database for the current RAILS_ENV'
+  desc 'Drops the database for the current BYGVIDEN_ENV'
   task :drop => :load_config do
-    config = ActiveRecord::Base.configurations[RAILS_ENV || 'development']
+    config = ActiveRecord::Base.configurations[BYGVIDEN_ENV || 'development']
     begin
       drop_database(config)
     rescue Exception => e
@@ -166,7 +166,7 @@ namespace :db do
 
   desc "Retrieves the charset for the current environment's database"
   task :charset => :environment do
-    config = ActiveRecord::Base.configurations[RAILS_ENV || 'development']
+    config = ActiveRecord::Base.configurations[BYGVIDEN_ENV || 'development']
     case config['adapter']
     when 'mysql'
       ActiveRecord::Base.establish_connection(config)
@@ -181,7 +181,7 @@ namespace :db do
 
   desc "Retrieves the collation for the current environment's database"
   task :collation => :environment do
-    config = ActiveRecord::Base.configurations[RAILS_ENV || 'development']
+    config = ActiveRecord::Base.configurations[BYGVIDEN_ENV || 'development']
     case config['adapter']
     when 'mysql'
       ActiveRecord::Base.establish_connection(config)
@@ -232,34 +232,34 @@ namespace :db do
     desc "Dump the database structure to a SQL file"
     task :dump => :environment do
       abcs = ActiveRecord::Base.configurations
-      case abcs[RAILS_ENV]["adapter"]
+      case abcs[BYGVIDEN_ENV]["adapter"]
       when "mysql", "oci", "oracle"
-        ActiveRecord::Base.establish_connection(abcs[RAILS_ENV])
-        File.open("#{RAILS_ROOT}/db/#{RAILS_ENV}_structure.sql", "w+") { |f| f << ActiveRecord::Base.connection.structure_dump }
+        ActiveRecord::Base.establish_connection(abcs[BYGVIDEN_ENV])
+        File.open("#{RAILS_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql", "w+") { |f| f << ActiveRecord::Base.connection.structure_dump }
       when "postgresql"
-        ENV['PGHOST']     = abcs[RAILS_ENV]["host"] if abcs[RAILS_ENV]["host"]
-        ENV['PGPORT']     = abcs[RAILS_ENV]["port"].to_s if abcs[RAILS_ENV]["port"]
-        ENV['PGPASSWORD'] = abcs[RAILS_ENV]["password"].to_s if abcs[RAILS_ENV]["password"]
-        search_path = abcs[RAILS_ENV]["schema_search_path"]
+        ENV['PGHOST']     = abcs[BYGVIDEN_ENV]["host"] if abcs[BYGVIDEN_ENV]["host"]
+        ENV['PGPORT']     = abcs[BYGVIDEN_ENV]["port"].to_s if abcs[BYGVIDEN_ENV]["port"]
+        ENV['PGPASSWORD'] = abcs[BYGVIDEN_ENV]["password"].to_s if abcs[BYGVIDEN_ENV]["password"]
+        search_path = abcs[BYGVIDEN_ENV]["schema_search_path"]
         search_path = "--schema=#{search_path}" if search_path
-        `pg_dump -i -U "#{abcs[RAILS_ENV]["username"]}" -s -x -O -f db/#{RAILS_ENV}_structure.sql #{search_path} #{abcs[RAILS_ENV]["database"]}`
+        `pg_dump -i -U "#{abcs[BYGVIDEN_ENV]["username"]}" -s -x -O -f db/#{BYGVIDEN_ENV}_structure.sql #{search_path} #{abcs[BYGVIDEN_ENV]["database"]}`
         raise "Error dumping database" if $?.exitstatus == 1
       when "sqlite", "sqlite3"
-        dbfile = abcs[RAILS_ENV]["database"] || abcs[RAILS_ENV]["dbfile"]
-        `#{abcs[RAILS_ENV]["adapter"]} #{dbfile} .schema > db/#{RAILS_ENV}_structure.sql`
+        dbfile = abcs[BYGVIDEN_ENV]["database"] || abcs[BYGVIDEN_ENV]["dbfile"]
+        `#{abcs[BYGVIDEN_ENV]["adapter"]} #{dbfile} .schema > db/#{BYGVIDEN_ENV}_structure.sql`
       when "sqlserver"
-        `scptxfr /s #{abcs[RAILS_ENV]["host"]} /d #{abcs[RAILS_ENV]["database"]} /I /f db\\#{RAILS_ENV}_structure.sql /q /A /r`
-        `scptxfr /s #{abcs[RAILS_ENV]["host"]} /d #{abcs[RAILS_ENV]["database"]} /I /F db\ /q /A /r`
+        `scptxfr /s #{abcs[BYGVIDEN_ENV]["host"]} /d #{abcs[BYGVIDEN_ENV]["database"]} /I /f db\\#{BYGVIDEN_ENV}_structure.sql /q /A /r`
+        `scptxfr /s #{abcs[BYGVIDEN_ENV]["host"]} /d #{abcs[BYGVIDEN_ENV]["database"]} /I /F db\ /q /A /r`
       when "firebird"
-        set_firebird_env(abcs[RAILS_ENV])
-        db_string = firebird_db_string(abcs[RAILS_ENV])
-        sh "isql -a #{db_string} > #{RAILS_ROOT}/db/#{RAILS_ENV}_structure.sql"
+        set_firebird_env(abcs[BYGVIDEN_ENV])
+        db_string = firebird_db_string(abcs[BYGVIDEN_ENV])
+        sh "isql -a #{db_string} > #{RAILS_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql"
       else
         raise "Task not supported by '#{abcs["test"]["adapter"]}'"
       end
 
       if ActiveRecord::Base.connection.supports_migrations?
-        File.open("#{RAILS_ROOT}/db/#{RAILS_ENV}_structure.sql", "a") { |f| f << ActiveRecord::Base.connection.dump_schema_information }
+        File.open("#{RAILS_ROOT}/db/#{BYGVIDEN_ENV}_structure.sql", "a") { |f| f << ActiveRecord::Base.connection.dump_schema_information }
       end
     end
   end
