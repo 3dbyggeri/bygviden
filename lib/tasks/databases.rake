@@ -1,5 +1,5 @@
 namespace :db do
-  task :load_config => :rails_env do
+  task :load_config => :bygviden_env do
     require 'active_record'
     ActiveRecord::Base.configurations = YAML::load(File.open('/Users/watson/code/bygviden/config/database.yml'))
     ActiveRecord::Base.logger = Logger.new(STDERR)
