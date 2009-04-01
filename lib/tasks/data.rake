@@ -10,8 +10,8 @@ namespace :db do
       host = conf['host']
       database = conf['database']
 
-      auth = "-u #{user}" + (pass.nil? ? '' : " -p#{pass}")
-      puts `mysql #{auth} -h #{host} #{database} < #{ENV['file']}`
+      auth = "-u #{user}" + (pass.nil? ? '' : " -p'#{pass}'")
+      `mysql #{auth} -h #{host} #{database} < #{ENV['file']}`
     end
   end
 end
