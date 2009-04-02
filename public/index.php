@@ -1,4 +1,5 @@
 <?php
+
 require_once('tema.inc.php');
 
 $menu = array( 'forside'=>'Forside', 'tema'=>'Temaer', 'bygningsdel'=>'Bygningsdele', 

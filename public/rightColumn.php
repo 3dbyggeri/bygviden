@@ -1,4 +1,4 @@
-<?
+<?php
  $branche = $_SESSION['branche']; 
  $brancheLabel = ($brancher[$branche])? $brancher[$branche]:$brancher['general'];
 
