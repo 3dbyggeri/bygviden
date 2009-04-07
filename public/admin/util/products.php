@@ -27,7 +27,6 @@ class products
   var $admin_telefon;
   var $advertise_deal;
   var $updateDeal;
-  var $publish;
 
   function products( $dba )
   {

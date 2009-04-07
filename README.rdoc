@@ -1,3 +1,7 @@
+= Administration interface
+
+To access the admin interface browse the /admin url.
+
 = Folder content
 
 [config/]  Contains database and environment specific configuration files
@@ -61,3 +65,8 @@
                             (some are hosted on 3rd party servers, but 
                             all are requested through here so we can 
                             record usage and authenticate the user)
+
+= Database tables
+
+[dev_a_user]  Contains the users with access to the administration area. 
+              Passwords are stored as MD5 hashes.
