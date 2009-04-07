@@ -19,7 +19,7 @@
         
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
-                <td width="1"> <img src="graphics/transp.gif" border="0" width="1" height="350"> </td>
+                <td width="1"> <img src="../graphics/transp.gif" border="0" width="1" height="350"> </td>
                 <td class="tdborder_content" valign="top">
                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr> 
