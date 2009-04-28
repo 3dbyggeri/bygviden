@@ -140,7 +140,7 @@ $add_key_word = urlencode($add_key_word);
                                 <span class="spacer">|</span>
                                 <input type="hidden" name="cx" value="015764437916890128434:rxnarlt6_eg" />
                                 <input type="hidden" name="cof" value="FORID:10;NB:1" />
-                                <input type="hidden" name="ie" value="UTF-8" />
+                                <input type="hidden" name="ie" value="ISO-8859-1" />
                                 <input type="hidden" name="action" value="search" />
                                 <input type="text" name="q" size="31" />
                                 <a href="javascript:document.searching.submit()">S&oslash;g</a>
