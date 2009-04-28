@@ -112,7 +112,7 @@ $add_key_word = urlencode($add_key_word);
             </div>
             <div id="msg">
             </div>
-            <form method="get" name="searching" action="?action=search">
+            <form id="cse-search-box" name="searching" action="/">
             <table id="topmenu" width="100%" cellpadding="2" cellspacing="0" border="0">
                 <tr>
                     <td valign="top" class="menu">
@@ -138,8 +138,11 @@ $add_key_word = urlencode($add_key_word);
                                 <a href="pagetema/login.php" onclick="return GB_show('Log in', this.href,300,400)">Log in</a>
                             <?endif?>-->
                                 <span class="spacer">|</span>
-                                <input type="text" name="query" value="<?=$_REQUET['query']?>">
-                                <input type="hidden" name="action" value="search">
+                                <input type="hidden" name="cx" value="015764437916890128434:rxnarlt6_eg" />
+                                <input type="hidden" name="cof" value="FORID:10;NB:1" />
+                                <input type="hidden" name="ie" value="UTF-8" />
+                                <input type="hidden" name="action" value="search" />
+                                <input type="text" name="q" size="31" />
                                 <a href="javascript:document.searching.submit()">S&oslash;g</a>
                     </td>
                </tr>
