@@ -208,8 +208,6 @@ $add_key_word = urlencode($add_key_word);
                         <map name="partners">
                             <area href="http://www.teknologisk.dk" target="_blank" alt="Teknologisk Institut" shape="rect" coords="0,0,123,32">
                             <area href="http://www.danskbyggeri.dk" target="_blank" alt="Dansk Byggeri" shape="rect" coords="123,0,217,32">
-                            <area href="http://www.danskeark.org" target="_blank" alt="Danske Arkitektvirksomheder" shape="rect" coords="217,0,301,32">
-                            <area href="http://www.frinet.dk" target="_blank" alt="FRI Foreningen af R&aring;dgivende Ingeni&oslash;rer" shape="rect" coords="301,0,398,32">
                         </map>
                     </td>
                     <td align="right" nowrap>
