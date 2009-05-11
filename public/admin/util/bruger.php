@@ -184,10 +184,10 @@ class bruger
                  u.abonament_periode,
                  u.readed
               FROM
-                ". $this->p."usage as u,
+                (". $this->p."usage as u,
 
                 ". $this->p."kildestyring as p2,
-                ". $this->p."kildestyring as p3
+                ". $this->p."kildestyring as p3)
 
               LEFT JOIN
                 ". $this->p."kildestyring as p
