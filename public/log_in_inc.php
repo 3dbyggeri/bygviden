@@ -53,16 +53,6 @@ if( $_POST['log_in'] )
   }
 }
 ?>
-<div style="width:400px;padding:20px">
-<div id="headline">bygviden.dk outsources </div>
-<p>
-Dansk Byggeris bestyrelse har besluttet at outsource bygviden.dk til Teknologisk Institut. Dansk Byggeri indg&aring;r i en redaktionsgruppe og har dermed indflydelse p&aring; det faglige indhold p&aring; portalen.
-</p>
-<p>
-Fra den 1. maj 2009 vil det v&aelig;re muligt at logge p&aring; bygviden.dk og dermed muligt at k&oring;be og downloade publikationer.
-</p>
-</div>
-<!--
 <div id="headline">Log ind</div>
 <table cellpadding="0" cellspacing="0" border="0" class="formtable" style="width:500px">
   <tr>
@@ -97,4 +87,3 @@ Fra den 1. maj 2009 vil det v&aelig;re muligt at logge p&aring; bygviden.dk og d
     </form>
 
   </table>
--->

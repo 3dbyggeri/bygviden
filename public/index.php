@@ -131,12 +131,11 @@ $add_key_word = urlencode($add_key_word);
                         </ul>
                     </td>
                     <td class="login" valign="top" align="right" nowrap>
-                           <!--
                             <?if(isLogged()):?>
                                 <a href="javascript:document.lg.submit()">Log out</a>
                             <?else:?>
                                 <a href="pagetema/login.php" onclick="return GB_show('Log in', this.href,300,400)">Log in</a>
-                            <?endif?>-->
+                            <?endif?>
                                 <span class="spacer">|</span>
                                 <input type="hidden" name="cx" value="015764437916890128434:rxnarlt6_eg" />
                                 <input type="hidden" name="cof" value="FORID:10;NB:1" />

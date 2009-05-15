@@ -74,16 +74,6 @@ if($_POST['log_in'])
         <div id="msg"><?=$msg?></div>
 
         <center>
-<div style="padding:10px">
-            <h2>bygviden.dk outsources </h2>
-<p style="width:400px">
-Dansk Byggeris bestyrelse har besluttet at outsource bygviden.dk til Teknologisk Institut. Dansk Byggeri indg&aring;r i en redaktionsgruppe og har dermed indflydelse p&aring; det faglige indhold p&aring; portalen.
-</p>
-<p style="width:400px">
-Fra den 1. maj 2009 vil det v&aelig;re muligt at logge p&aring; bygviden.dk og dermed muligt at k&oring;be og downloade publikationer.
-</p>
-</div>
-        <!--
         <form name="myform" action="login.php" method="post">
             <input type="hidden" name="ff" value="<?=$_REQUEST["ff"]?>"/>
             <?if($_SESSION['update_password']):?>
@@ -138,7 +128,6 @@ Fra den 1. maj 2009 vil det v&aelig;re muligt at logge p&aring; bygviden.dk og d
 
             <?endif?>
         </form>
-       -->
         </center>
 
     </body>
