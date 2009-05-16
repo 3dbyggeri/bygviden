@@ -19,7 +19,7 @@ class publication
 
     $txt = '<tr class="cat_'.$publication['kat_id'].'"> <td>Publikationen findes '.$ogssa .' i trykt udgave</td>
                  <td valign="top"><a href="'.$url.'" target="_blank" style="text-decoration:none;color:#333">Bes&oslash;g  ';
-    $txt.= (stristr($url,'www.danskbyggeri.dk'))? 'Servicebutikken':'forlag';
+    $txt.= (stristr($url,'www.danskbyggeri.dk') || stristr($url,'servicebutik.danskbyggeri.dk'))? 'Servicebutikken':'forlag';
     $txt.= '</a></td></tr>';
     return $txt;
   }
