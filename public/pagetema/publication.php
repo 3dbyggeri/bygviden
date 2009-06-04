@@ -18,7 +18,7 @@ class publication
     $ogsaa = ($publication['digital_udgave']=='y')? 'ogs&aring;':'';
     $txt = '<tr> <td class="left">Publikationen findes '.$ogssa .' i trykt udgave</td>
                  <td class="right" valign="top"><a href="'.$url.'" target="_blank" class="link">Bes&oslash;g  ';
-    $txt.= (stristr($url,'www.danskbyggeri.dk') || stristr($url,'servicebutik.danskbyggeri.dk'))? 'Servicebutikken':'forlag';
+    $txt.= (stristr($url,'servicebutik.danskbyggeri.dk'))? 'Servicebutikken':'forlag';
     $txt.= '</a></td></tr>';
     return $txt;
   }

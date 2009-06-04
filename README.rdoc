@@ -40,7 +40,9 @@ To access the admin interface browse the /admin url.
 
 [public/nyhedsbrev/]        Newsletter stuff - maybe not used anymore
 
-[public/page/]              Frontend core - Used to showing pages - maybe not used anymore (pagetema is used instead)
+[public/page/]              Frontend core - Used to showing pages - 
+                            maybe not used anymore (pagetema is used 
+                            instead)
 
 [public/pagetema/]          Frontend core - Used to showing pages
 
@@ -68,5 +70,13 @@ To access the admin interface browse the /admin url.
 
 = Database tables
 
-[dev_a_user]  Contains the users with access to the administration area. 
-              Passwords are stored as MD5 hashes.
+[dev_a_user]                  Contains the users with access to the 
+                              administration area. Passwords are stored
+                              as MD5 hashes.
+
+[dev_kilde2element]           Relation table linking publications to 
+                              building elements and categories.
+
+[dev_kildestyring]            Contains all publications
+
+[dev_kildestyring_state]      It doesn't look like this table is in use
