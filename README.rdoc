@@ -79,4 +79,7 @@ To access the admin interface browse the /admin url.
 
 [dev_kildestyring]            Contains all publications
 
-[dev_kildestyring_state]      It doesn't look like this table is in use
+[dev_*_state]                 Seems to only be used in:
+                                admin/util/brancheTree.php
+                                admin/util/brancheTreeNew.php
+                                admin/util/tree.php
