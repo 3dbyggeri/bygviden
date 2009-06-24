@@ -13,7 +13,7 @@ function storeAddress()
 
 
 	require_once('MCAPI.class.php');
-	$api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+	$api = new MCAPI('anders.thomsen@teknologisk.dk','ouXNsSAPFk');
 	
 	// Fetch mailing list id
 	$lists = $api->lists();
