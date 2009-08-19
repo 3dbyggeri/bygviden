@@ -92,7 +92,7 @@ if( $kilde->unpublishDate["y"] )
 
         <table id="stamdata" class="color1" width="100%" cellpadding="3" cellspacing="0" border="0">
           <!-- STATUS FOR KILDEN -->
-          <tr class="color2">
+          <!-- <tr class="color2">
             <td colspan="2">
               Status for kilden
             </td>
@@ -136,7 +136,7 @@ if( $kilde->unpublishDate["y"] )
             <td>
               <?=$unpublishDate->render()?>
             </td>
-          </tr>
+          </tr> -->
           <!-- /STATUS FOR KILDEN -->
 
           <!-- BRUGSBETINGELSERNE -->

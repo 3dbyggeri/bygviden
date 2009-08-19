@@ -174,14 +174,14 @@ if( $generere || $_GET['generere'] )
   <tr>
     <td class="header">
       Kildstyring
-      <input 
+      <!-- <input 
         onclick="window.open('log.php?id=fetch')" style="width:120px;margin-left:20px;" 
         type="button" class="knap" size="30px" 
         value="HTTPFetch Log"> 
       <input 
         onclick="window.open('log.php?id=spider')" style="width:120px;"
         type="button" class="knap" size="30px" 
-        value="Spider Log"> 
+        value="Spider Log">  -->
     </td>
 	</tr>
   <tr> 
@@ -200,7 +200,7 @@ if( $generere || $_GET['generere'] )
              </tr>
            <?endif?>
            <?if( $generere || $_GET['generere'] ):?>
-             <tr>
+             <!-- <tr>
                   <td class="tdpadtext">
                     <textarea name="config" cols="80" rows="12"><?=$config?></textarea>
                   </td>
@@ -209,16 +209,16 @@ if( $generere || $_GET['generere'] )
               <td class="tdpadtext">
                 <input type="button" class="stor_knap" style="width:250px" onclick="document.location.href='<?=$_SERVER['PHP_SELF']?>?gemt=1&pane=<?=$pane?>'"  value="Gemt konfigurationen" >
               </td>
-            </tr>
+            </tr> -->
            <?else:?>
-             <tr>
+             <!-- <tr>
                   <td class="tdpadtext">Genere konfigurations fil for fetchen</td>
              </tr>
               <tr >
                 <td class="tdpadtext">
                   <input type="button" class="stor_knap" style="width:250px" onclick="document.location.href='<?=$_SERVER['PHP_SELF']?>?generere=1&pane=<?=$pane?>'"  value="Generere" >
                 </td>
-              </tr>
+              </tr> -->
            <?endif?>
            <tr>
                 <td class="plainText" style="padding-left: 10px; padding-bottom: 20px;">&nbsp;</td>

@@ -17,7 +17,7 @@
     $kilde->loadProperties();
 
     $panes = array( "indstillinger"=>'Indstillinger','usage_current'=>'Brugsbetingelserne'); 
-    if( $kilde->type == 'publikation' ) $panes['indexing'] = 'Indeks';
+    // if( $kilde->type == 'publikation' ) $panes['indexing'] = 'Indeks';
 
     $paneinclude= 'indstillinger.php';
     if($pane) $_SESSION['pane'] = $pane;

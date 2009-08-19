@@ -101,8 +101,8 @@ if( $kilde->type == 'leverandor' )
           </td>
           <td align="right">
             <?if( $kilde->type == 'publikation' ):?>
-              <input onclick="window.open('log.php?id=<?=$id?>')" type="button" class="knap" size="30px" value="Spider log"> 
-              &nbsp;&nbsp;
+              <!-- <input onclick="window.open('log.php?id=<?= $id?>')" type="button" class="knap" size="30px" value="Spider log"> 
+              &nbsp;&nbsp; -->
             <?endif?>
 
             <?if( $kilde->type == 'leverandor'):?>
@@ -147,12 +147,12 @@ if( $kilde->type == 'leverandor' )
                   Publikationen findes ikke i digital udgave
                 </td>
               </tr>
-              <tr >
+              <!-- <tr >
                 <td colspan="2">
                   <input type="checkbox" name="custom_summary" <?=( $kilde->custom_summary == 'y' )?'checked':''?> >
                   Brug beskrivelsen som resume
                 </td>
-              </tr>
+              </tr> -->
               <tr>
                 <td colspan="2">
                   <input type="checkbox" name="indholdsfortegnelse" <?=( $kilde->indholdsfortegnelse == 'y' )?'checked':''?> >
@@ -183,7 +183,7 @@ if( $kilde->type == 'leverandor' )
                   </td>
                 </tr>
               <?endif?>
-              <tr >
+              <!-- <tr >
                 <td>
                   Ord som ikke må optræde i publikationens web adresse
                 </td>
@@ -242,7 +242,7 @@ if( $kilde->type == 'leverandor' )
                     <?endforeach?>
                   </select>
                 </td>
-              </tr>
+              </tr> -->
             <?endif?>
             <?if( $kilde->type == 'leverandor' ):?>
               <tr >
@@ -388,18 +388,18 @@ if( $kilde->type == 'leverandor' )
           <!--  BRANCHE RELEVANS -->
           <?if( $kilde->type == 'publikation' ):?>
           <?$brancher = $kilde->getBrancheRelevans()?>
-            <tr class="color2">
+            <!-- <tr class="color2">
               <td colspan="2">
                 Branche relevans
               </td>
-            </tr>
+            </tr> -->
             <?for( $i = 0; $i < count( $brancher); $i++ ):?>
-              <tr>
+              <!-- <tr>
                 <td colspan="2">
                   <input type="checkbox" name="brancher[]" value="<?=$brancher[$i]['id']?>" <?=$brancher[$i]['checked']?>>
                   <?=$brancher[$i]['label']?>
                 </td>
-              </tr>
+              </tr> -->
             <?endfor?>
           <?endif?>
           <!-- / BRANCHE RELEVANS -->
