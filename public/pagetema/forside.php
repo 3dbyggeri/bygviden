@@ -87,7 +87,7 @@ class Forside extends View
             <script type="text/javascript" src="/chimp/js/mailing-list.js"></script>
             </div>
       ';*/
-      $news = '<iframe allowtransparency="true" vspace="0" hspace="0" marginheight="0" marginwidth="0" src="http://www.bygviden.dk/nyhedsbrev/index.php" name="nyhedsbrev" frameborder="0" height="200px" scrolling="no" width="300px"></iframe>';
+      $news = '<p><iframe allowtransparency="true" vspace="5" hspace="5" marginheight="5" marginwidth="5" src="/nyhedsbrev/index.php" name="nyhedsbrev" frameborder="0" height="158px" scrolling="no" width="325px"></iframe></p>';
     }
 
     $tema = new temaDoc(new dba() );
@@ -109,8 +109,8 @@ class Forside extends View
                         '.$edit.' 
                         <div class="meat">
                         <h2>'.$label.'</h2>
-                        '.$msg.'
                         '.$news.'
+                        '.$msg.'
                         </div>
                         <img src="graphics/transp.gif" width="250" height="1" border="0"/><br>
                     </td>

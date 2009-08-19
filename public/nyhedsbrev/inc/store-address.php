@@ -17,7 +17,7 @@ function storeAddress()
 	
 	// Fetch mailing list id
 	$lists = $api->lists();
-	$list_id = $lists[0]['id'];
+	$list_id = "da07b0a015"; // 'Bygviden Nyhedsbrev on http://us1.admin.mailchimp.com/lists/dashboard?id=1
 
 	if($api->listSubscribe($list_id, $_GET['email'], '') === true) {
 		// It worked!	
