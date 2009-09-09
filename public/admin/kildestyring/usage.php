@@ -30,7 +30,9 @@
                             'login'=>'Medlem',
                             'byg'=>'Dansk Byggeri',
                             'ark'=>'Ark',
-                            'fri'=>'Fri');
+                            'fri'=>'Fri',
+                            'tun'=>'Tun',
+                            'no'=>'Ingen');
         ?>
         <table id="usage" width="100%" cellpadding="5" cellspacing="1" border="0">
             <tr>

@@ -107,6 +107,8 @@
                         <option value="BYG">Dansk Byggeri</option>
                         <option value="ARK" <?=($props['organization'] == 'ARK' )?'selected':''?>>Danske Arkitekter</option>
                         <option value="FRI" <?=($props['organization'] == 'FRI' )?'selected':''?>>Foregning af R&aring;dgivende Ingeni&oslash;rer</option>
+                        <option value="TUN" <?=($props['organization'] == 'TUN' )?'selected':''?>>Tr&aelig;lasthandlerunionen</option>
+                        <option value="NO" <?=($props['organization'] == 'NO' )?'selected':''?>>Ingen organisation</option>
                     </select>
                 </td>
            </tr>
