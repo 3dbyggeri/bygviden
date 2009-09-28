@@ -23,6 +23,6 @@ input {border:1px solid #999; padding:.4em; width:80%; font-size:1.4em;}
 #subscribe { width:300px;font-family:verdana,sans-serif;font-size:11px; }
 #subscribe fieldset { padding:15px;background-color:#eee;border:1px solid #ccc; }
 #no-spam {font-size:9px;color:#666; margin-top:20px;}
-#subscribe  #address-label{ color:#666; }
+#subscribe, #address-label, #name-label, #company-label, #title-label, #branch-label { color:#666; }
 
 #response { color:#f30;font-size:10px;margin-top:5px; }

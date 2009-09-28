@@ -87,7 +87,7 @@ class Forside extends View
             <script type="text/javascript" src="/chimp/js/mailing-list.js"></script>
             </div>
       ';*/
-      $news = '<p><iframe allowtransparency="true" vspace="5" hspace="5" marginheight="5" marginwidth="5" src="/nyhedsbrev/index.php" name="nyhedsbrev" frameborder="0" height="158px" scrolling="no" width="325px"></iframe></p>';
+      $news = '<p><iframe allowtransparency="true" vspace="5" hspace="5" marginheight="5" marginwidth="5" src="/nyhedsbrev/index.php" name="nyhedsbrev" frameborder="0" height="400px" scrolling="no" width="325px"></iframe></p>';
     }
 
     $tema = new temaDoc(new dba() );
