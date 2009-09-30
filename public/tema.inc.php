@@ -13,7 +13,7 @@ require_once('config.php');
 $ICONS = array('bath'=>'787878','energi'=>'959595','floor'=>'B0B0B0',
                'obs'=>'3C3C3C','roof'=>'BCBCBC','stairs'=>'636363',
                'energi2'=>'B1B1B1','kloak'=>'888888','lov'=>'BFBFBF',
-               'opmaaling'=>'9B9B9B','generic'=>'3C3C3C');
+               'opmaaling'=>'9B9B9B','generic'=>'3C3C3C','nyhed'=>'3C3C3C','materialer'=>'3C3C3C');
 
 function isLogged() { return $_SESSION['bruger_id']? true:false; }
 

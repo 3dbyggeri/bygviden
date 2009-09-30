@@ -56,7 +56,8 @@ class Forside extends View
     $icons = array_keys($ICONS);
     if(!$icon) $icon = $icons[($nr-1)];
 
-    if($nr== '7') $icon = 'generic';
+    if($nr== '6') $icon = 'materialer';
+    if($nr== '7') $icon = 'nyhed';
     $color = $ICONS[$icon];
     
     $link = '';
