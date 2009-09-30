@@ -27,14 +27,16 @@
 			  <div><label for="branch" id="branch-label">Branche*</label><br />
 			  <select name="branch" id="branch" style="width:175px">
           <option value="">V&aelig;lg...</option>
-          <option value="carpenter">T&oslash;mrer</option>
-          <option value="joiner">Snedker</option>
+          <option value="carpenter">T&oslash;mrer/Snedker</option>
           <option value="painter">Maler</option>
           <option value="bricklayer">Murer</option>
           <option value="contractor">Entrepren&oslash;r</option>
-          <option value="manufacturer">Producent</option>
-          <option value="student">Studerende</option>
+          <option value="fitter">Installat&oslash;r (f.eks. El, VVS, Ventilation)</option>
           <option value="private">Privat (g&oslash;r-det-selv)</option>
+          <option value="engineer">R&aring;dgivende ingeni&oslash;r</option>
+          <option value="architect">Arkitekt</option>
+          <option value="builder">Bygherre</option>
+          <option value="manufacturer">Producent/Leverand&oslash;r</option>
           <option value="other">Andet</option>
         </select></div>
 
