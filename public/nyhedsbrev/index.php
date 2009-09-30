@@ -21,7 +21,7 @@
 			  <div><label for="title" id="title-label">Titel</label><br />
 			  <input type="text" name="title" id="title" style="width:175px"/></div>
 
-			  <div><label for="company" id="company-label">Virksomhedsnavn*</label><br />
+			  <div><label for="company" id="company-label">Virksomhedsnavn</label><br />
 			  <input type="text" name="company" id="company" style="width:175px"/></div>
 
 			  <div><label for="branch" id="branch-label">Branche*</label><br />
@@ -32,6 +32,7 @@
           <option value="painter">Maler</option>
           <option value="bricklayer">Murer</option>
           <option value="contractor">Entrepren&oslash;r</option>
+          <option value="manufacturer">Producent</option>
           <option value="student">Studerende</option>
           <option value="private">Privat (g&oslash;r-det-selv)</option>
           <option value="other">Andet</option>

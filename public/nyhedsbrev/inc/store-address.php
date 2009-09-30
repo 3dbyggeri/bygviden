@@ -7,7 +7,6 @@ function storeAddress()
 	$errors = array();
 	if(!$_GET['name']){ $errors[count($errors)] = "Navn skal udfyldes"; } 
 	if(!$_GET['email']){ $errors[count($errors)] = "Email skal udfyldes"; } 
-	if(!$_GET['company']){ $errors[count($errors)] = "Virksomhed skal udfyldes"; }
 	if(!$_GET['branch']){ $errors[count($errors)] = "Branche skal udfyldes"; }
 
 	if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*$/i", $_GET['email'])) {
