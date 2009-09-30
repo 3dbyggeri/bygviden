@@ -66,7 +66,7 @@ class Forside extends View
     $height = '';
     if($nr== '7')
     {
-      $icon = 'generic';
+      $icon = 'nyhed';
       //$height = ' style="height:528px" ';
       /*
       $news = '
@@ -95,6 +95,7 @@ class Forside extends View
     {
         $l ='onclick="document.location.href=\'?action=tema&id='.$tema_id.'\'" style="cursor:pointer"';
         if($nr=='6') $l ='onclick="document.location.href=\'?action=bygningsdel\'" style="cursor:pointer"';
+        if($nr=='7') $l = '';
 
         if($tema->isEditor()) { $link_edit =$l; } else { $link = $l; }
     }
