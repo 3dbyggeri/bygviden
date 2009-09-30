@@ -132,7 +132,16 @@ class Tema extends View
   }
   function adds()
   {
-      return '<style>#rightgoogleadd {display:none; }</style>
+      $str = '';
+      // if($_REQUEST['tema']==8) $str.= '<object width="260" height="250">
+      // <param name="movie" value="img/ads/260x250_SBS.swf">
+      // <embed src="img/ads/260x250_SBS.swf" width="260" height="250">
+      // </embed>
+      // </object>';
+
+      if($_REQUEST['tema']==8) $str.= '<a href="http://www.energikoncept.dk" target="_blank"><img src="img/ads/260x250_SBS.gif" style="border:none;" /></a>';
+    
+      return $str.= '<style>#rightgoogleadd {display:none; }</style>
               <div style="margin-top:10px;margin-left:15px;">
               <script type="text/javascript"><!--
               google_ad_client = "pub-6194810790403167";
