@@ -133,13 +133,11 @@ class Tema extends View
   function adds()
   {
       $str = '';
-      // if($_REQUEST['tema']==8) $str.= '<object width="260" height="250">
-      // <param name="movie" value="img/ads/260x250_SBS.swf">
-      // <embed src="img/ads/260x250_SBS.swf" width="260" height="250">
-      // </embed>
-      // </object>';
-
-      if($_REQUEST['tema']==8) $str.= '<a href="http://www.energikoncept.dk" target="_blank"><img src="img/ads/260x250_SBS.gif" style="border:none;" /></a>';
+      if($_REQUEST['tema']==8) $str.= '<object width="260" height="250">
+             <param name="movie" value="img/ads/260x250_SBS.swf">
+             <param name="clickTAG" value="http://www.energikoncept.dk">
+             <embed src="img/ads/260x250_SBS.swf" width="260" height="250" FlashVars="clickTAG=http://www.energikoncept.dk"></embed>
+      </object>';
     
       return $str.= '<style>#rightgoogleadd {display:none; }</style>
               <div style="margin-top:10px;margin-left:15px;">
