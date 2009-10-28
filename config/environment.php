@@ -19,3 +19,13 @@ define('DATABASE_HOST', $db['host']);
 define('DATABASE_USER', $db['username']);
 define('DATABASE_PASS', $db['password']);
 define('DATABASE_PREFIX', 'dev_');
+
+// load the buildin.yml file
+$buildin = Spyc::YAMLLoad(file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/../config/buildin.yml'));
+
+// scope the buildin settings to the correct environment
+$buildin = $buildin[$_SERVER['BYGVIDEN_ENV']];
+
+// populate global database constants
+define('BUILDIN_HOST', $buildin['host']);
+define('BUILDIN_API_KEY', $buildin['api_key']);

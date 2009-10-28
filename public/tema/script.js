@@ -24,10 +24,10 @@ function resizing()
     
     var h = total_height - (header_height + footer_height);
     document.getElementById('content').style.height = h +'px'; 
+    if(document.getElementById('buildin-iframe')) document.getElementById('buildin-iframe').style.height = h-23 +'px';
     var c = document.location.href.split('#');
     if(c.length != 2) return;
     document.location.href = '#'+ c[1];
-
 }
 function editTemaMenu()
 {

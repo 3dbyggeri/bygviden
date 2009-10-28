@@ -1,0 +1,11 @@
+development:
+  host: localhost:3000
+  api_key: n3eh0gagikpys3bjapuiz5gudqvc60
+
+qa:
+  host: qa.digitaleprodukter.dk
+  api_key: n3eh0gagikpys3bjapuiz5gudqvc60
+
+production:
+  host: www.digitaleprodukter.dk
+  api_key: n3eh0gagikpys3bjapuiz5gudqvc60

@@ -1,4 +1,5 @@
 <?php
+// require_once('debug.php'); // enable show_php function for all kinds of datatypes
 
 require_once('tema.inc.php');
 
