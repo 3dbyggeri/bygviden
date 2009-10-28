@@ -1,5 +1,5 @@
 <?php 
-ini_set("include_path", ini_get("include_path") . "../lib");
+ini_set("include_path", ini_get("include_path") . ":../lib");
 require_once 'HTTP/Request2.php';
 
 Class BuildInRESTClient
