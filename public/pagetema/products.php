@@ -261,13 +261,13 @@ class Produkter extends View
     
     $s.= '  <div id="buildin-embedded-catalogue"></div>';
     $s.= '  <script>';
-    $s.= '  var buildinBaseUrl = "http://' . $this->products->api_key . '.embed.' . $this->products->base_url . '";';
+    $s.= '  var buildinBaseUrl = "http://' . $this->products->api_key . '.embed.' . $this->products->host . '";';
     $s.= '  var buildinStartpage = "/products/' . $id . '";';
     $s.= '  (function() {';
     $s.= '    var headElement = document.getElementsByTagName("head")[0];';
     $s.= '    var script = document.createElement("script");';
     $s.= '    script.language="javascript";';
-    $s.= '    script.src = "' . $this->products->protocol . $this->products->api_key . '.embed.' . $this->products->base_url . '/javascripts/embed-client.js";';
+    $s.= '    script.src = "' . $this->products->protocol . $this->products->api_key . '.embed.' . $this->products->host . '/javascripts/embed-client.js";';
     $s.= '    headElement.appendChild(script);';
     $s.= '  })();';
     $s.= '  </script>';

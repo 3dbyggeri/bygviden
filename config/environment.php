@@ -28,4 +28,6 @@ $buildin = $buildin[$_SERVER['BYGVIDEN_ENV']];
 
 // populate global database constants
 define('BUILDIN_HOST', $buildin['host']);
+define('BUILDIN_USER', $buildin['username']);
+define('BUILDIN_PASS', $buildin['password']);
 define('BUILDIN_API_KEY', $buildin['api_key']);

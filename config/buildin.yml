@@ -1,9 +1,11 @@
 development:
-  host: localhost:3000
+  host: buildin.local:3000
   api_key: n3eh0gagikpys3bjapuiz5gudqvc60
 
 qa:
-  host: jeppe:1UMTpIdlgJki8ToL@qa.digitaleprodukter.dk
+  host: qa.digitaleprodukter.dk
+  username: jeppe
+  password: 1UMTpIdlgJki8ToL
   api_key: n3eh0gagikpys3bjapuiz5gudqvc60
 
 production:
