@@ -3,7 +3,7 @@ development:
   api_key: n3eh0gagikpys3bjapuiz5gudqvc60
 
 qa:
-  host: jeppe:d1TX1q57uidQyOgtet3md6Efd@qa.digitaleprodukter.dk
+  host: jeppe:1UMTpIdlgJki8ToL@qa.digitaleprodukter.dk
   api_key: n3eh0gagikpys3bjapuiz5gudqvc60
 
 production:
