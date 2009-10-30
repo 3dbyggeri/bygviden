@@ -194,10 +194,11 @@ class Produkter extends View
     // if(($product['advertise_deal'] == 'trial' || $product['advertise_deal'] == 'active')
     //     && $product['logo_url'] 
     //     && file_exists(realpath('logo').'/'.$product['logo_url'])  ) 
-    // {
+    if($product['logo_url'])
+    {
       $str.='<img src="'.$product['logo_url'].'" align="top" 
             border="0" style="margin-top:10px;margin-bottom:10px"/>';
-    // }
+    }
     $str.='&nbsp;</td></tr></table>';
     $str.='</div>';
     return $str;

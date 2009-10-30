@@ -30,12 +30,14 @@ Class BuildInRESTClient
       $xml = new SimpleXMLElement($response);
       $result = array();
       foreach ($xml->product as $product) {
+        $logo_url = ''; // flush variabel from last iteration
+        if($product->{"product-image-list-url"}!='') $logo_url = $this->protocol . $this->auth_string . $this->host . $product->{"product-image-list-url"};
         array_push($result, array(
           'id' => $product->id.'', // make sure it's a string
           'name' => utf8_decode($product->name.''), // make sure it's a string
           'description' => utf8_decode($product->{"short-description"}.''), // make sure it's a string
           'home_page' => $_SERVER['REQUEST_URI'] . "&id=" . $product->id,
-          'logo_url' => $this->protocol . $this->auth_string . $this->host . $product->{"product-image-list-url"},
+          'logo_url' => $logo_url,
           'producer_name' => utf8_decode($product->{"owner-name"}.''), // make sure it's a string
           'producer_id' => $product->{"owner-id"}.'' // make sure it's a string
           ));
@@ -55,10 +57,12 @@ Class BuildInRESTClient
       $xml = new SimpleXMLElement($response);
       $result = array();
       foreach ($xml->organization as $organization) {
+        $logo_url = ''; // flush variabel from last iteration
+        if($organization->{"logo-list-url"}!='') $logo_url = $this->protocol . $this->auth_string . $this->host . $organization->{"logo-list-url"};
         array_push($result, array(
           'id' => $organization->id.'', // make sure it's a string
           'name' => utf8_decode($organization->name.''), // make sure it's a string
-          'logo_url' => $this->protocol . $this->auth_string . $this->host . $organization->{"logo-list-url"},
+          'logo_url' => $logo_url,
           'antal_produkter' => $organization->{"product-count"}.'' // make sure it's a string
           ));
       }
@@ -85,6 +89,7 @@ Class BuildInRESTClient
       $response = $request->send()->getBody();
       
       $xml = new SimpleXMLElement($response);
+      if($xml->{"logo-list-url"}!='') $logo_url = $this->protocol . $this->auth_string . $this->host . $xml->{"logo-list-url"};
       $result = array(
         'id' => $xml->id.'', // make sure it's a string
         'name' => utf8_decode($xml->name.''), // make sure it's a string
@@ -95,7 +100,7 @@ Class BuildInRESTClient
         'home_page' => utf8_decode($xml->{"primary-url"}.''), // make sure it's a string
         'fax' => utf8_decode($xml->fax.''), // make sure it's a string
         'CVR' => utf8_decode($xml->{"vat-number"}.''), // make sure it's a string
-        'logo_url' => $this->protocol . $this->auth_string . $this->host . $xml->{"logo-list-url"}
+        'logo_url' => $logo_url
         );
       return $result;
       
@@ -113,6 +118,8 @@ Class BuildInRESTClient
       $result = array( 0=>array('name'=>'root','products'=>array() ) );
 
       foreach ($xml->product as $product) {
+        $logo_url = ''; // flush variabel from last iteration
+        if($product->{"product-image-list-url"}!='') $logo_url = $this->protocol . $this->auth_string . $this->host . $product->{"product-image-list-url"};
         $group_name = utf8_decode($product->{"product-group-name"}.'');
         if($group_name=='') $group_name = 'root';
         $product = array(
@@ -120,7 +127,7 @@ Class BuildInRESTClient
           'name' => utf8_decode($product->name.''), // make sure it's a string
           'description' => utf8_decode($product->{"short-description"}.''), // make sure it's a string
           'home_page' => $_SERVER['HOST'] . "/index.php?action=products&section=produkter&id=" . $product->id,
-          'logo_url' => $this->protocol . $this->auth_string . $this->host . $product->{"product-image-list-url"}
+          'logo_url' => $logo_url
           );
         if($detected_groups[$group_name] !== null){
           array_push($result[$detected_groups[$group_name]]['products'],$product);
@@ -188,13 +195,15 @@ Class BuildInRESTClient
       $result = array();
 
       foreach ($xml->product as $product) {
+        $logo_url = ''; // flush variabel from last iteration
+        if($product->{"product-image-list-url"}!='') $logo_url = $this->protocol . $this->auth_string . $this->host . $product->{"product-image-list-url"};
         $org_name = utf8_decode($product->{"owner-name"}.'');
         $product = array(
           'id' => $product->id.'', // make sure it's a string
           'name' => utf8_decode($product->name.''), // make sure it's a string
           'description' => utf8_decode($product->{"short-description"}.''), // make sure it's a string
           'home_page' => $_SERVER['HOST'] . "/index.php?action=products&section=produkter&id=" . $product->id,
-          'logo_url' => $this->protocol . $this->auth_string . $this->host . $product->{"product-image-list-url"}
+          'logo_url' => $logo_url
           );
         if($detected_orgs[$org_name] !== null){
           array_push($result[$detected_orgs[$org_name]]['products'],$product);
