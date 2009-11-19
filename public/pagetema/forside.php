@@ -94,7 +94,7 @@ class Forside extends View
     $tema = new temaDoc(new dba() );
     if($tema_id )
     {
-        $l ='onclick="document.location.href=\'?action=tema&id='.$tema_id.'\'" style="cursor:pointer"';
+        $l ='onclick="document.location.href=\'?tema='.$tema_id.'\'" style="cursor:pointer"';
         if($nr=='6') $l ='onclick="document.location.href=\'?action=bygningsdel\'" style="cursor:pointer"';
         if($nr=='7') $l = '';
 
