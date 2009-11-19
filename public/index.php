@@ -54,6 +54,7 @@ $add_key_word = urlencode($add_key_word);
 <html>
     <head>
         <title>Bygviden :: <?=$current_title?><?=$full_title?></title>
+        <meta name="google-site-verification" content="yhTKfij8aVHtFTNO1QiCIxHBuGahAFsu5Lqhre45jVw" />
         <meta name="resource-type" content="document" />
         <meta name="robots" content="INDEX, FOLLOW" />
         <meta name="revisit-after" content="7" />
