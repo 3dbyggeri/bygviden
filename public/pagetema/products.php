@@ -10,6 +10,7 @@ class Produkter extends View
   var $producer;
   var $alfabet;
   var $isVareGroupALeaf;
+  var $title;
 
   function rightmenu()
   {
@@ -87,26 +88,37 @@ class Produkter extends View
       if($_REQUEST['id']) 
       {
         $this->isVareGroupALeaf = $this->products->isVareGroupALeaf($_REQUEST['id']);
+        $this->title= $this->convertCase($this->products->getVaregruppeName($_REQUEST['id']));
         if($this->isVareGroupALeaf) return;
       }
     }
     if($_REQUEST['section']=='producenter')
     {
       $this->head= $this->menu[$_REQUEST['section']];
+      $this->title= 'A';
+      if($_REQUEST['l'])
+      {
+        $this->title= $_REQUEST['l'];
+      }
       if($_REQUEST['id']) 
       {
         $this->producer = $this->products->loadProducer($_REQUEST['id']);
-        $this->head= $this->producer['name'];
+        $this->title= $this->producer['name'];
         return;
       }
     }
     if($_REQUEST['section']=='produkter')
     {
       $this->head= $this->menu[$_REQUEST['section']];
+      $this->title= 'A';
+      if($_REQUEST['l'])
+      {
+        $this->title= $_REQUEST['l'];
+      }
       if($_REQUEST['id']) 
       {
         $this->producer = $this->products->loadProducerByProductId($_REQUEST['id']);
-        $this->head= $this->producer['name'];
+        $this->title= $this->producer['name'];
         return;
       }
     }
@@ -125,7 +137,7 @@ class Produkter extends View
   }
   function getVareGruppe($varegruppe_id)
   {
-    $s = '<h1>'. $this->convertCase($this->products->getVaregruppeName($_REQUEST['id'])).'</h1>';
+    $s = '<h1>'. $this->title .'</h1>';
 
     $group = $this->products->getProductsForVaregruppeGroupByProducer($varegruppe_id);
     if(!$group) return $s.='<p>Ingen produkter under denne varegruppe</p>';

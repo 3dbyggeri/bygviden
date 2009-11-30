@@ -28,7 +28,12 @@ $page = getPage($current_action);
 if($_REQUEST['action'] == 'search') $add_key_word = ($_REQUEST['query'])? $_REQUEST['query']:'Søg';
 
 if($current_action =='bibliotek') $add_key_word = 'Bibliotek';
-if($current_action =='products') $add_key_word = 'Produkter';
+if($current_action =='products')
+{
+  $add_key_word = 'Produkter';
+  $current_title = $page->head; //hack...
+  if($page->title) $full_title = ' &#187; '. $page->title;
+}
 if($current_action =='bygningsdel')
 {
     $branche = $_SESSION['branche']; 
