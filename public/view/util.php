@@ -3,12 +3,21 @@ function displayFreeDocument($uri,$kilde)
 {
   global $_GET,$_SESSION;
 
+  // added by JL 2010-01-06
+  $dba  = new dba();
+  $bruger = new bruger( $dba );
+  $bruger->setId( $_SESSION['bruger_id'] );
+  $pris = 0;
+  $periode = 0;
+
   $doc_url = ( $uri )? $uri: $kilde->kilde_url;
   $title   = ( $_GET['title'] )? $_GET['title']: $kilde->name;
   if( !$doc_url ) die("Missing url in free charge");
 
   if( stristr( $doc_url , 'TIL_BYG_CONTENT' ) )
   {
+    //log the purchase - added by JL 2010-01-06
+    $bruger->purchase( $_GET['pub'],$doc_url,$title, $pris, $periode );
     $_SESSION['retrieve_name'] = 'autonomy'; 
     $_SESSION['retrieve_password'] = '32ReCvQa';
     $_SESSION['retrieve_url']  = $doc_url;
@@ -16,6 +25,8 @@ function displayFreeDocument($uri,$kilde)
   }
   elseif( $kilde->log_in == 'y' )
   {
+    //log the purchase - added by JL 2010-01-06
+    $bruger->purchase( $_GET['pub'],$doc_url,$title, $pris, $periode );
     $_SESSION['retrieve_name'] = $kilde->log_name; 
     $_SESSION['retrieve_password'] = $kilde->log_password;
     $_SESSION['retrieve_url']  = $doc_url;
@@ -23,6 +34,8 @@ function displayFreeDocument($uri,$kilde)
   }
   else
   {
+    //log the purchase - added by JL 2010-01-06
+    $bruger->purchase( $_GET['pub'],$doc_url,$title, $pris, $periode );
     die("<script>document.location.href='$doc_url';</script>");
   }
   exit();
