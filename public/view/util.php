@@ -25,8 +25,6 @@ function displayFreeDocument($uri,$kilde)
   }
   elseif( $kilde->log_in == 'y' )
   {
-    //log the purchase - added by JL 2010-01-06
-    $bruger->purchase( $_GET['pub'],$doc_url,$title, $pris, $periode );
     $_SESSION['retrieve_name'] = $kilde->log_name; 
     $_SESSION['retrieve_password'] = $kilde->log_password;
     $_SESSION['retrieve_url']  = $doc_url;
@@ -34,8 +32,6 @@ function displayFreeDocument($uri,$kilde)
   }
   else
   {
-    //log the purchase - added by JL 2010-01-06
-    $bruger->purchase( $_GET['pub'],$doc_url,$title, $pris, $periode );
     die("<script>document.location.href='$doc_url';</script>");
   }
   exit();
