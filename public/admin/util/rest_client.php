@@ -25,6 +25,7 @@ Class BuildInRESTClient
     try {
       if($letter==''){ $letter = "A";}
       $request = new HTTP_Request2($this->products_url."&l=".$letter);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
       
       $xml = new SimpleXMLElement($response);
@@ -52,6 +53,7 @@ Class BuildInRESTClient
     try {
       if($letter==''){ $letter = "A";}
       $request = new HTTP_Request2($this->companies_url."&l=".$letter);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
       
       $xml = new SimpleXMLElement($response);
@@ -75,6 +77,7 @@ Class BuildInRESTClient
   function loadProducerByProductId($id){
     try {
       $request = new HTTP_Request2($this->protocol . $this->auth_string . $this->host . "/products/" . $id . ".xml?api_key=" . $this->api_key);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
       
       $xml = new SimpleXMLElement($response);
@@ -86,6 +89,7 @@ Class BuildInRESTClient
   function loadProducer($id){
     try {
       $request = new HTTP_Request2($this->protocol . $this->auth_string . $this->host . "/companies/" . $id . ".xml?api_key=" . $this->api_key);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
       
       $xml = new SimpleXMLElement($response);
@@ -111,6 +115,7 @@ Class BuildInRESTClient
   function loadCategoriesAndProducts($id){
     try {
       $request = new HTTP_Request2($this->protocol . $this->auth_string . $this->host . "/companies/" . $id . "/products.xml?api_key=" . $this->api_key);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
       $xml = new SimpleXMLElement($response);
 
@@ -146,6 +151,7 @@ Class BuildInRESTClient
   function loadVaregrupper($id){
     try {
       $request = new HTTP_Request2($this->bv_product_groups_url);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
       
       $xml = new SimpleXMLElement($response);
@@ -166,6 +172,7 @@ Class BuildInRESTClient
   function isVareGroupALeaf($id){
     try {
       $request = new HTTP_Request2($this->protocol . $this->auth_string . $this->host . "/bv_product_groups/" . $id . ".xml?api_key=" . $this->api_key);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
     
       $xml = new SimpleXMLElement($response);
@@ -177,6 +184,7 @@ Class BuildInRESTClient
   function getVaregruppeName($id){
     try {
       $request = new HTTP_Request2($this->protocol . $this->auth_string . $this->host . "/bv_product_groups/" . $id . ".xml?api_key=" . $this->api_key);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
     
       $xml = new SimpleXMLElement($response);
@@ -188,6 +196,7 @@ Class BuildInRESTClient
   function getProductsForVaregruppeGroupByProducer($id){
     try {
       $request = new HTTP_Request2($this->protocol . $this->auth_string . $this->host . "/bv_product_groups/" . $id . "/products.xml?api_key=" . $this->api_key);
+      $request -> setHeader('Accept: text/xml');
       $response = $request->send()->getBody();
     
       $xml = new SimpleXMLElement($response);

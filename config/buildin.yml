@@ -1,5 +1,5 @@
 development:
-  host: buildin.local:3000
+  host: dpk.local
   api_key: n3eh0gagikpys3bjapuiz5gudqvc60
 
 qa:
