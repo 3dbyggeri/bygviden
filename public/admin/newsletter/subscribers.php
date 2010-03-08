@@ -6,7 +6,7 @@ $subscriber = new subscriber( $dba );
 if( $_POST['add'] ) 
 {
     $id = $subscriber->add($_POST['add']);
-	$api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+    $api = new MCAPI('d07bd0b0d7de5fe5688789b2fd4ab30c-us1');
 
 	// Fetch mailing list id
 	$lists = $api->lists();
@@ -19,7 +19,7 @@ if( $_POST['add'] )
 
 	if($api->listSubscribe($list_id, $_POST['add'], '') === true) {
 		// It worked!	
-		$msg ='Brugeren er blevet tilmeld';
+		$msg ='Brugeren er blevet tilmeldt';
 	}else{
 		// An error ocurred, return error message	
 		$msg ='Teknisk fejl: ' . $api->errorMessage;
@@ -33,7 +33,7 @@ if( is_numeric( $_GET['delete'] ) )
 {
     $subscriber->remove( $_GET['delete'] );
 
-	$api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+    $api = new MCAPI('d07bd0b0d7de5fe5688789b2fd4ab30c-us1');
 
 	// Fetch mailing list id
 	$lists = $api->lists();
@@ -59,7 +59,7 @@ if( $_GET['state'] && is_numeric( $_GET['id'] ) )
 
     if($_GET['state'] =='n')
     {
-	    $api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+      $api = new MCAPI('d07bd0b0d7de5fe5688789b2fd4ab30c-us1');
         // Fetch mailing list id
         $lists = $api->lists();
         $list_id = $lists[0]['id'];

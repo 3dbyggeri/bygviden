@@ -388,16 +388,16 @@ class MinSide extends View
     $props = ($user_id)? $this->bruger->loadSvend($user_id):$this->bruger->loadBruger(); 
 
     $str  = '
-            <p>Bruger navn<span style="color:red">*</span>:<br />
+            <p>Brugernavn<span style="color:red">*</span>:<br />
                <input type="text" name="bruger_navn" class="textfield" value="'.$props['bruger_navn'].'"/>
             </p>
-            <p>Firma navn (1)<span style="color:red">*</span>:<br />
+            <p>Firmanavn<span style="color:red">*</span>:<br />
                <input type="text" name="firmanavn1" class="textfield" value="'.$props['firmanavn1'].'"/>
             </p>
-            <p> Firma navn (2):<br />
+            <p>Navn:<br />
               <input type="text" name="firmanavn2" class="textfield" value="'.$props['firmanavn2'].'" />
             </p>
-            <p>Firma navn (3):<br />
+            <p>Titel:<br />
               <input type="text" name="firmanavn3" class="textfield" value="'.$props['firmanavn3'].'" />
             </p>
             <p>E-mail:<br />

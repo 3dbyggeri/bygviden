@@ -48,19 +48,19 @@
                 <td class="tdpadtext"><input type="text" class="input" name="bruger_navn" value="<?=$props['bruger_navn']?>"></td>
            </tr>
 		       <tr>
-                <td class="tdpadtext">Firmanavn 1</td>
+                <td class="tdpadtext">Firma</td>
            </tr>
             <tr>
                 <td class="tdpadtext"><input type="text" class="input" name="firmanavn1" value="<?=$props['firmanavn1']?>"></td>
            </tr>
 		       <tr>
-                <td class="tdpadtext">Firmanavn 2</td>
+                <td class="tdpadtext">Navn</td>
            </tr>
             <tr>
                 <td class="tdpadtext"><input type="text" class="input" name="firmanavn2" value="<?=$props['firmanavn2']?>"></td>
            </tr>
 		       <tr>
-                <td class="tdpadtext">Firmanavn 3</td>
+                <td class="tdpadtext">Titel</td>
            </tr>
             <tr>
                 <td class="tdpadtext"><input type="text" class="input" name="firmanavn3" value="<?=$props['firmanavn3']?>"></td>
@@ -96,6 +96,18 @@
            </tr>
             <tr>
                 <td class="tdpadtext"><input type="text" class="input" name="land" value="<?=$props['land']?>"></td>
+           </tr>
+		       <tr>
+                <td class="tdpadtext">Medlemsnummer</td>
+           </tr>
+            <tr>
+                <td class="tdpadtext"><input type="text" class="input" name="medlemsnr" value="<?=$props['medlemsnr']?>"></td>
+           </tr>
+		       <tr>
+                <td class="tdpadtext">Telefonnummer</td>
+           </tr>
+            <tr>
+                <td class="tdpadtext"><input type="text" class="input" name="tlf" value="<?=$props['tlf']?>"></td>
            </tr>
 
             <tr>

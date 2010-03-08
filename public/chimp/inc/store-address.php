@@ -13,7 +13,7 @@ function storeAddress()
 
 
 	require_once('MCAPI.class.php');
-	$api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+	$api = new MCAPI('d07bd0b0d7de5fe5688789b2fd4ab30c-us1');
 	
 	// Fetch mailing list id
     //$list_id = 1;

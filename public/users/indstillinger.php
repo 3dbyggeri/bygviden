@@ -60,15 +60,15 @@ $props = $bruger->loadBruger();
 
   <table cellpadding="0" cellspacing="0" border="0">
     <tr style="padding-bottom:5px;">
-      <td class="label">Firmanavn 1:</td>
+      <td class="label">Firmanavn:</td>
       <td style="padding-left:5px;"><input class="login_input" type="text" name="firmanavn1" value="<?=$props['firmanavn1']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">
-      <td class="label">Fuld navn:</td>
+      <td class="label">Navn:</td>
       <td style="padding-left:5px;"><input class="login_input" type="text" name="firmanavn2" value="<?=$props['firmanavn2']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">
-      <td class="label">Firmanavn 3:</td>
+      <td class="label">Titel:</td>
       <td style="padding-left:5px;"><input class="login_input" type="text" name="firmanavn3" value="<?=$props['firmanavn3']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">

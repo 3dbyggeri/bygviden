@@ -19,7 +19,7 @@ if($_GET['list']) listcampaigns();
 
 function listcampaigns()
 {
-	$api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+  $api = new MCAPI('d07bd0b0d7de5fe5688789b2fd4ab30c-us1');
   $c = $api->campaigns(); 
   echo '<xmp>';
   print_r($c);
@@ -63,7 +63,7 @@ function setUpCampaign($id,$api)
 }
 function sendTestNewsLetter($id,$email)
 {
-	$api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+  $api = new MCAPI('d07bd0b0d7de5fe5688789b2fd4ab30c-us1');
   $cid = setUpCampaign($id,$api);
 
   if(!$api->campaignSendTest($cid, array($email)))
@@ -77,7 +77,7 @@ function sendTestNewsLetter($id,$email)
 }
 function sendNewsLetter($id)
 {
-	$api = new MCAPI('rim@danskbyggeri.dk','danskbyggeri');
+  $api = new MCAPI('d07bd0b0d7de5fe5688789b2fd4ab30c-us1');
   $cid = setUpCampaign($id,$api);
 
   if(!$api->campaignSendNow($cid))
