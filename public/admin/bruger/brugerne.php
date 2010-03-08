@@ -153,7 +153,7 @@
       <img src="../graphics/<?=( $brugerne[$i]['parent'] )?'un_checked':'checked'?>.gif" width="9" height="9">
     </td>
     <td align="right">
-      <a href="<?=$_SERVER['PHP_SELF']?>?delete=<?=$brugerne[$i]["id"]?>" class="tabelText">[x]</a>
+      <a href="<?=$_SERVER['PHP_SELF']?>?delete=<?=$brugerne[$i]["id"]?>" onclick="return confirm('Er du sikker på at du vil slette denne bruger. Denne handling kan ikke fortrydes!')" class="tabelText">[x]</a>
       <img src="../graphics/transp.gif" width="5">
     </td>
   </tr>
