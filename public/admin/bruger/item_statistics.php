@@ -67,7 +67,7 @@ $graphHeight = 400;
   </tr> 
   <tr>
     <td class="header">
-      Statistik for <?=$props['firmanavn1']?> <?=$props['firmanavn2']?> <?=$props['firmanavn3']?>
+      Statistik for <?=$props['firma']?> <?=$props['navn']?> <?=$props['titel']?>
     </td>
   </tr>   
   <tr> 

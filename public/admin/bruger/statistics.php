@@ -62,9 +62,9 @@ $readingUsers = $statistics->getTopReadingUsers($from,$to);
                   <table width="100%" cellpadding="3" cellspacing="0" border="0">
                     <?for( $i = 0; $i < count( $topUsers); $i++ ):?>
                       <?
-                        $user = $topUsers[$i]['firmanavn1'];
-                        $user.=' '.$topUsers[$i]['firmanavn2'];
-                        $user.=' '.$topUsers[$i]['firmanavn3'];
+                        $user = $topUsers[$i]['firma'];
+                        $user.=' '.$topUsers[$i]['navn'];
+                        $user.=' '.$topUsers[$i]['titel'];
 
                         if(!trim($user)) continue;
                       ?>
@@ -90,9 +90,9 @@ $readingUsers = $statistics->getTopReadingUsers($from,$to);
                   <table width="100%" cellpadding="3" cellspacing="0" border="0">
                     <?for( $i = 0; $i < count( $readingUsers); $i++ ):?>
                       <?
-                        $user = $readingUsers[$i]['firmanavn1'];
-                        $user.=' '.$readingUsers[$i]['firmanavn2'];
-                        $user.=' '.$readingUsers[$i]['firmanavn3'];
+                        $user = $readingUsers[$i]['firma'];
+                        $user.=' '.$readingUsers[$i]['navn'];
+                        $user.=' '.$readingUsers[$i]['titel'];
 
                         if(!trim($user)) continue;
                       ?>

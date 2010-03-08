@@ -99,8 +99,8 @@
     </td>
     <td>
       <?if(!$_GET['searching']):?>
-        <a href="<?=$_SERVER['PHP_SELF']?>?sorting_colum=firmanavn2&sorting_order=<?=( $_SESSION['sorting_order'] == 'asc' )?'desc':'asc'?>" class="tabelText">Firmanavn (2)</a>
-        <?=( $_SESSION['sorting_colum'] == 'firmanavn2' )? $pil:'' ?>
+        <a href="<?=$_SERVER['PHP_SELF']?>?sorting_colum=navn&sorting_order=<?=( $_SESSION['sorting_order'] == 'asc' )?'desc':'asc'?>" class="tabelText">Firmanavn (2)</a>
+        <?=( $_SESSION['sorting_colum'] == 'navn' )? $pil:'' ?>
       <?else:?>
         <span class="tabelText">Firmanavn (2)</span>
       <?endif?>
@@ -140,7 +140,7 @@
       <a href="index_bruger.php?bruger_id=<?=$brugerne[$i]["id"]?>" class="tabelText" style="padding-top:3px;padding-bottom:3px"><?=$brugerne[$i]['bruger_navn']?></a>
     </td>
     <td >
-      <?$fullname = $brugerne[$i]['firmanavn1'] .' '. $brugerne[$i]['firmanavn2'] .' '. $brugerne[$i]['firmanavn3']?>
+      <?$fullname = $brugerne[$i]['firma'] .' '. $brugerne[$i]['navn'] .' '. $brugerne[$i]['titel']?>
       <a href="index_bruger.php?bruger_id=<?=$brugerne[$i]["id"]?>" class="tabelText" title="<?=$fullname?>"><?=( strlen( $fullname ) > 20 )? substr( $fullname, 0, 20 ).'...': $fullname?></a>
     </td>
     <td class="tabelText">

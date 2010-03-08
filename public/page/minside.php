@@ -170,9 +170,9 @@ class MinSide extends View
 
     $this->bruger->updateSvend(  $_POST['user_id']
                                 ,$_POST['bruger_navn'] 
-                                ,$_POST['firmanavn1'] 
-                                ,$_POST['firmanavn2'] 
-                                ,$_POST['firmanavn3'] 
+                                ,$_POST['firma'] 
+                                ,$_POST['navn'] 
+                                ,$_POST['titel'] 
                                 ,$_POST['email']
                                 ,$_POST['password']
                                 ,$_POST['restricted_shop']
@@ -184,17 +184,18 @@ class MinSide extends View
     if(!$_POST['save_personal_settings']) return;
 
     $this->bruger->setBrugerNavn( $_POST['bruger_navn'] );
-    $this->bruger->setFirmanavn1( $_POST['firmanavn1'] );
-    $this->bruger->setFirmanavn2( $_POST['firmanavn2'] );
-    $this->bruger->setFirmanavn3( $_POST['firmanavn3'] );
+    $this->bruger->setFirma( $_POST['firma'] );
+    $this->bruger->setNavn( $_POST['navn'] );
+    $this->bruger->setTitel( $_POST['titel'] );
     $this->bruger->setGade( $_POST['gade'] );
     $this->bruger->setSted( $_POST['sted'] );
     $this->bruger->setPostnr( $_POST['postnr'] );
     $this->bruger->setCity( $_POST['city'] );
     $this->bruger->setLand( $_POST['land'] );
+    $this->bruger->setTlf( $_POST['tlf'] );
     $this->bruger->setEmail( $_POST['email'] );
 
-    $full_name =  $_POST['firmanavn1'] .' '. $_POST['firmanavn2'] .' '. $_POST['firmanavn3'];
+    $full_name =  $_POST['firma'] .' '. $_POST['navn'] .' '. $_POST['titel'];
     $_SESSION['bruger_navn'] = ( trim( $full_name ) )? $full_name:$_POST['bruger_navn'];
 
     $this->message = '&AElig;ndringerne er blevet gemt ( '. date('H:i:s') .' )';
@@ -287,16 +288,19 @@ class MinSide extends View
                <input type="text" name="bruger_navn" class="textfield" value="'.$props['bruger_navn'].'"/>
             </p>
             <p>Firmanavn<span style="color:red">*</span>:<br />
-               <input type="text" name="firmanavn1" class="textfield" value="'.$props['firmanavn1'].'"/>
+               <input type="text" name="firma" class="textfield" value="'.$props['firma'].'"/>
             </p>
             <p>Navn:<br />
-              <input type="text" name="firmanavn2" class="textfield" value="'.$props['firmanavn2'].'" />
+              <input type="text" name="navn" class="textfield" value="'.$props['navn'].'" />
             </p>
             <p>Titel:<br />
-              <input type="text" name="firmanavn3" class="textfield" value="'.$props['firmanavn3'].'" />
+              <input type="text" name="titel" class="textfield" value="'.$props['titel'].'" />
             </p>
             <p>E-mail:<br />
               <input type="text" name="email" class="textfield" value="'.$props['email'].'"/>
+            </p>
+            <p>Telefon:<br />
+              <input type="text" name="tlf" class="textfield" value="'.$props['tlf'].'"/>
             </p>';
     if(!$user_id) $str.= $this->formAdress($props);
 
@@ -397,7 +401,7 @@ class MinSide extends View
     for($i=0;$i<count($svende);$i++)
     {
       $id = $svende[$i]['id'];
-      $navn = ( $svende[$i]['firmanavn2'] )? $svende[$i]['firmanavn2']:$svende[$i]['bruger_navn'];
+      $navn = ( $svende[$i]['navn'] )? $svende[$i]['navn']:$svende[$i]['bruger_navn'];
 
       $shop = 'Klippekort ( ';
       $shop.=($svende[$i]['clipkort_amount'])? $svende[$i]['clipkort_amount']:0;
@@ -813,7 +817,7 @@ class MinSide extends View
 
       if($svend)
       {
-        $n = $f['firmanavn2']? $f['firmanavn2']:$f['bruger_navn'];
+        $n = $f['navn']? $f['navn']:$f['bruger_navn'];
         $name = '<td valign="top"><a 
                             href="index.php?action=minside&item=users&user_id='.$f['id'].'">'.$n.'</a></td>';
       }

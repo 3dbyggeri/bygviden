@@ -121,7 +121,7 @@ $forbrug = $bruger->getForbrug( $faktura );
 			</tr>
 	    <?for( $i = 0; $i < count( $forbrug ); $i++ ):?>
 	      <tr>
-	        <td valign="top" style="padding-right:15px;"><a href="index.php?page=minside&section=brugerstyring&user=<?=$forbrug[$i]['id']?>"><?=( $forbrug[$i]['firmanavn2'] )? $forbrug[$i]['firmanavn2']:$forbrug[$i]['bruger_navn']?></a></td>
+	        <td valign="top" style="padding-right:15px;"><a href="index.php?page=minside&section=brugerstyring&user=<?=$forbrug[$i]['id']?>"><?=( $forbrug[$i]['navn'] )? $forbrug[$i]['navn']:$forbrug[$i]['bruger_navn']?></a></td>
 	        <td valign="top" style="padding-right:15px;"><a href="javascript:displaydoc(<?=$forbrug[$i]['publication_id']?>,1)"><?=$forbrug[$i]['title']?></a></td>
 	        <td valign="top" width="100" NOWRAP><?=( $forbrug[$i]['abonament_periode'])?$forbrug[$i]['abonament_periode'].' Md. abonnement':'Enkelt visning'?></td>
 	        <td valign="top" width="75" NOWRAP><?=$forbrug[$i]['readed']?></td>

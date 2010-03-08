@@ -11,14 +11,15 @@
     $bruger->setMedlemsNr( $_POST['medlemsnr'] );
     $bruger->setActive( $_POST['active'] );
     $bruger->setGratist( $_POST['gratist'] );
-    $bruger->setFirmanavn1( $_POST['firmanavn1'] );
-    $bruger->setFirmanavn2( $_POST['firmanavn2'] );
-    $bruger->setFirmanavn3( $_POST['firmanavn3'] );
+    $bruger->setFirma( $_POST['firma'] );
+    $bruger->setNavn( $_POST['navn'] );
+    $bruger->setTitel( $_POST['titel'] );
     $bruger->setGade( $_POST['gade'] );
     $bruger->setSted( $_POST['sted'] );
     $bruger->setPostnr( $_POST['postnr'] );
     $bruger->setCity( $_POST['city'] );
     $bruger->setLand( $_POST['land'] );
+    $bruger->setTlf( $_POST['tlf'] );
     $bruger->setEmail( $_POST['email'] );
     $message = 'Gemt ( '. date('H:i:s') .' )';
 
@@ -49,19 +50,19 @@
                 <td class="tdpadtext">Firmanavn 1</td>
            </tr>
             <tr>
-                <td class="tdpadtext"><input type="text" class="input" name="firmanavn1" value="<?=$props['firmanavn1']?>"></td>
+                <td class="tdpadtext"><input type="text" class="input" name="firma" value="<?=$props['firma']?>"></td>
            </tr>
 		       <tr>
                 <td class="tdpadtext">Firmanavn 2</td>
            </tr>
             <tr>
-                <td class="tdpadtext"><input type="text" class="input" name="firmanavn2" value="<?=$props['firmanavn2']?>"></td>
+                <td class="tdpadtext"><input type="text" class="input" name="navn" value="<?=$props['navn']?>"></td>
            </tr>
 		       <tr>
                 <td class="tdpadtext">Firmanavn 3</td>
            </tr>
             <tr>
-                <td class="tdpadtext"><input type="text" class="input" name="firmanavn3" value="<?=$props['firmanavn3']?>"></td>
+                <td class="tdpadtext"><input type="text" class="input" name="titel" value="<?=$props['titel']?>"></td>
            </tr>
 		       <tr>
                 <td class="tdpadtext">Gade</td>

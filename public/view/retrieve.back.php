@@ -90,7 +90,7 @@
       $bruger->setId( $_SESSION['parent'] );
       $props = $bruger->loadBruger();
       
-      $mesterNavn = $props['firmanavn1'] .' '.$props['firmanavn2'] .' '.$props['firmanavn3'];
+      $mesterNavn = $props['firma'] .' '.$props['navn'] .' '.$props['titel'];
       $mesterNavn = (trim($mesterNavn))? trim($mesterNavn): trim($props['bruger_navn']);
     }
     

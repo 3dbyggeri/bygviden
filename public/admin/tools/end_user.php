@@ -21,7 +21,7 @@
               password            VARCHAR(50),
               firmanavn1          VARCHAR(50),
               firmanavn2          VARCHAR(50),
-              firmanavn3          VARCHAR(50),
+              titel          VARCHAR(50),
               gade                VARCHAR(50),
               sted                VARCHAR(50),
               postnr              VARCHAR(10),

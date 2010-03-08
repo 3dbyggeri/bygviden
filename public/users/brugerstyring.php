@@ -16,7 +16,7 @@ if( $_POST['svend_edited'] )
 
   $bruger->updateSvend(  $_POST['user']
                         ,$_POST['bruger_navn'] 
-                        ,$_POST['firmanavn2'] 
+                        ,$_POST['navn'] 
                         ,$_POST['email']
                         ,$_POST['password']
                         ,$_POST['password2']
@@ -55,7 +55,7 @@ $svende = ( $user )?'':$bruger->getSvende();
     </tr>
     <tr style="padding-bottom:5px;">
       <td class="label">Fuld navn</td>
-      <td><input class="login_input" type="text" name="firmanavn2" value="<?=$props['firmanavn2']?>"></td>
+      <td><input class="login_input" type="text" name="navn" value="<?=$props['navn']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">
       <td class="label">Mail</td>
@@ -131,7 +131,7 @@ $svende = ( $user )?'':$bruger->getSvende();
         <td>
           <a class="infolinks" 
             href="<?=$_SERVER['PHP_SELF']?>?page=<?=$page?>&section=brugerstyring&user=<?=$svende[$i]['id']?>">
-          <?=( $svende[$i]['firmanavn2'] )? $svende[$i]['firmanavn2']:$svende[$i]['bruger_navn']  ?>
+          <?=( $svende[$i]['navn'] )? $svende[$i]['navn']:$svende[$i]['bruger_navn']  ?>
           </a>
         </td>
         <td class="infolinks">
@@ -143,7 +143,7 @@ $svende = ( $user )?'':$bruger->getSvende();
         </td>
         <td align="right">
           [<a class="infolinks"
-            href="javascript:slett(<?=$svende[$i]['id']?>,'<?=$svende[$i]['firmanavn2']?>')">Slet bruger</a>]
+            href="javascript:slett(<?=$svende[$i]['id']?>,'<?=$svende[$i]['navn']?>')">Slet bruger</a>]
           [<a class="infolinks" 
             href="<?=$_SERVER['PHP_SELF']?>?page=<?=$page?>&section=brugerstyring&user=<?=$svende[$i]['id']?>">Rediger bruger</a>]
         </td>

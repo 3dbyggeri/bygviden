@@ -20,9 +20,9 @@ class bruger
         $sql = "SELECT
                     id,
                     bruger_navn,
-                    firmanavn1,
-                    firmanavn2,
-                    firmanavn3,
+                    firma,
+                    navn,
+                    titel,
                     parent,
                     restricted_shop,
                     clipkort_amount,
@@ -33,7 +33,7 @@ class bruger
                     id =".$uid; 
           $record = $this->dba->singleArray( $sql );
           $_SESSION['bruger_id'] = $record['id'];
-          $long_name = $record['firmanavn1'] .' '. $record['firmanavn2'] .' '. $record['firmanavn3'];
+          $long_name = $record['firma'] .' '. $record['navn'] .' '. $record['titel'];
           $_SESSION['bruger_navn'] = ( trim( $long_name ) )? $long_name :$name;
           $_SESSION['is_mester'] = ( $record['parent'] )? 0:1; 
           $_SESSION['parent'] = $record['parent'];
@@ -49,9 +49,9 @@ class bruger
       $sql = "SELECT
                 id,
                 bruger_navn,
-                firmanavn1,
-                firmanavn2,
-                firmanavn3,
+                firma,
+                navn,
+                titel,
                 parent,
                 restricted_shop,
                 clipkort_amount,
@@ -64,7 +64,7 @@ class bruger
                 LOWER(password) = LOWER('". addslashes( $password ) ."') ";
       $record = $this->dba->singleArray( $sql );
       $_SESSION['bruger_id'] = $record['id'];
-      $long_name = $record['firmanavn1'] .' '. $record['firmanavn2'] .' '. $record['firmanavn3'];
+      $long_name = $record['firma'] .' '. $record['navn'] .' '. $record['titel'];
       $_SESSION['bruger_navn'] = ( trim( $long_name ) )? $long_name :$name;
       $_SESSION['is_mester'] = ( $record['parent'] )? 0:1; 
       $_SESSION['parent'] = $record['parent'];
@@ -115,7 +115,7 @@ class bruger
       $sql =" SELECT 
                  b.id,
                  b.bruger_navn,
-                 b.firmanavn2,
+                 b.navn,
                  u.publication_id,
                  u.url,
                  u.title,
@@ -228,9 +228,9 @@ class bruger
     function updateSvend( 
       $svendId, 
       $bruger_navn, 
-      $firmanavn1, 
-      $firmanavn2, 
-      $firmanavn3, 
+      $firma, 
+      $navn, 
+      $titel, 
       $email,
       $pass, 
       $restricted_shop,
@@ -245,9 +245,9 @@ class bruger
                 ". $this->table ."
               SET
                 bruger_navn ='". trim( $bruger_navn ) ."'
-                ,firmanavn1 ='". trim( $firmanavn1 ) ."'
-                ,firmanavn2 ='". trim( $firmanavn2 ) ."'
-                ,firmanavn3 ='". trim( $firmanavn3 ) ."'
+                ,firma ='". trim( $firma ) ."'
+                ,navn ='". trim( $navn ) ."'
+                ,titel ='". trim( $titel ) ."'
                 ,email      ='". trim( $email ) ."'
                 ,restricted_shop = '$restricted_shop'
                 ";
@@ -264,9 +264,9 @@ class bruger
       if( !is_numeric( $svendId ) ) return;
       $sql = "SELECT
                 bruger_navn,
-                firmanavn1,
-                firmanavn2,
-                firmanavn3,
+                firma,
+                navn,
+                titel,
                 active,
                 email,
                 password,
@@ -312,7 +312,7 @@ class bruger
       $sql = "SELECT
                 id,
                 bruger_navn,
-                firmanavn2,
+                navn,
                 restricted_shop,
                 clipkort_amount
               FROM
@@ -320,7 +320,7 @@ class bruger
               WHERE
                 parent =". $this->id ."
               ORDER BY
-                firmanavn2";
+                navn";
 
        $svende = Array();         
        $result = $this->dba->exec( $sql );
@@ -341,19 +341,19 @@ class bruger
                 active,
                 gratist,
                 parent,
-                firmanavn1,
-                firmanavn2,
-                firmanavn3
+                firma,
+                navn,
+                titel
               FROM
                 ". $this->table ."
               WHERE
                 bruger_navn LIKE '%".$search."%'
               OR
-                firmanavn1 LIKE '%".$search."%'
+                firma LIKE '%".$search."%'
               OR
-                firmanavn2 LIKE '%".$search."%'
+                navn LIKE '%".$search."%'
               OR 
-                firmanavn3 LIKE '%".$search."%'";
+                titel LIKE '%".$search."%'";
 
        $result = $this->dba->exec( $sql );
        $n      = $this->dba->getN( $result );
@@ -372,9 +372,9 @@ class bruger
                 active,
                 gratist,
                 parent,
-                firmanavn1,
-                firmanavn2,
-                firmanavn3
+                firma,
+                navn,
+                titel
               FROM
                 ". $this->table ."
               ORDER BY 
@@ -480,35 +480,35 @@ class bruger
                 id = ". $this->id; 
       $this->dba->exec( $sql );
     }
-    function setFirmanavn1( $firmanavn1 )
+    function setFirma( $firma )
     {
-      if( !$firmanavn1 ) $firmanavn1 = '';
+      if( !$firma ) $firma = '';
       $sql = "UPDATE 
                 ". $this->table ."
               SET
-                firmanavn1 = '". addslashes( $firmanavn1 ) ."'
+                firma = '". addslashes( $firma ) ."'
               WHERE
                 id = ". $this->id; 
       $this->dba->exec( $sql );
     }
-    function setFirmanavn2( $firmanavn2 )
+    function setNavn( $navn )
     {
-      if( !$firmanavn2 ) $firmanavn2 = '';
+      if( !$navn ) $navn = '';
       $sql = "UPDATE 
                 ". $this->table ."
               SET
-                firmanavn2 = '". addslashes( $firmanavn2 ) ."'
+                navn = '". addslashes( $navn ) ."'
               WHERE
                 id = ". $this->id; 
       $this->dba->exec( $sql );
     }
-    function setFirmanavn3( $firmanavn3 )
+    function setTitel( $titel )
     {
-      if( !$firmanavn3 ) $firmanavn3 = '';
+      if( !$titel ) $titel = '';
       $sql = "UPDATE 
                 ". $this->table ."
               SET
-                firmanavn3 = '". addslashes( $firmanavn3 ) ."'
+                titel = '". addslashes( $titel ) ."'
               WHERE
                 id = ". $this->id; 
       $this->dba->exec( $sql );
@@ -575,6 +575,17 @@ class bruger
                 ". $this->table ."
               SET
                 land = '". addslashes( $land ) ."'
+              WHERE
+                id = ". $this->id; 
+      $this->dba->exec( $sql );
+    }
+    function setTlf( $tlf )
+    {
+      if( !$tlf ) $tlf = '';
+      $sql = "UPDATE 
+                ". $this->table ."
+              SET
+                tlf = '". addslashes( $tlf ) ."'
               WHERE
                 id = ". $this->id; 
       $this->dba->exec( $sql );
@@ -876,14 +887,14 @@ class bruger
 
       $sql = "SELECT
                     bruger.id           AS user_id,
-                    bruger.firmanavn1   AS name1,
-                    bruger.firmanavn2   AS name2,
-                    bruger.firmanavn3   AS name3,
+                    bruger.firma   AS name1,
+                    bruger.navn   AS name2,
+                    bruger.titel   AS name3,
                     bruger.medlemsnr    AS medlemesnr,
                     mester.id           AS mester_id,
-                    mester.firmanavn1   AS mester_name1,
-                    mester.firmanavn2   AS mester_name2,
-                    mester.firmanavn3   AS mester_name3,
+                    mester.firma   AS mester_name1,
+                    mester.navn   AS mester_name2,
+                    mester.titel   AS mester_name3,
                     mester.medlemsnr    AS mester_medlemsnr,
                     SUM( forbrug.pris ) AS pris,
                     COUNT(*)            AS number
@@ -926,14 +937,14 @@ class bruger
 
       $sql = "SELECT
                     bruger.id           AS user_id,
-                    bruger.firmanavn1   AS name1,
-                    bruger.firmanavn2   AS name2,
-                    bruger.firmanavn3   AS name3,
+                    bruger.firma   AS name1,
+                    bruger.navn   AS name2,
+                    bruger.titel   AS name3,
                     bruger.medlemsnr    AS medlemesnr,
                     mester.id           AS mester_id,
-                    mester.firmanavn1   AS mester_name1,
-                    mester.firmanavn2   AS mester_name2,
-                    mester.firmanavn3   AS mester_name3,
+                    mester.firma   AS mester_name1,
+                    mester.navn   AS mester_name2,
+                    mester.titel   AS mester_name3,
                     mester.medlemsnr    AS mester_medlemsnr,
                     SUM( forbrug.pris ) AS pris,
                     COUNT(*)            AS number

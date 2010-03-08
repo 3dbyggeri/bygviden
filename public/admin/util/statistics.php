@@ -160,9 +160,9 @@ class statistics
 
       $sql= "SELECT
               stat.user_id, 
-              bruger.firmanavn1,
-              bruger.firmanavn2,
-              bruger.firmanavn3,
+              bruger.firma,
+              bruger.navn,
+              bruger.titel,
               count(*) AS total
             FROM
               dev_stats as stat,
@@ -208,9 +208,9 @@ class statistics
 
       $sql= "SELECT
               stat.user_id, 
-              bruger.firmanavn1,
-              bruger.firmanavn2,
-              bruger.firmanavn3,
+              bruger.firma,
+              bruger.navn,
+              bruger.titel,
               count(*) AS total
             FROM
               dev_stats as stat,

@@ -86,7 +86,7 @@
         <tr class="<?=($i%2==0)?"color1":"color2"?>" style="padding-top:3px;padding-bottom:3px;">
           <td> 
             <a href="index.php?brugerstyring=1&user=<?=$forbrug[$i]['id']?>"
-            class="tabelText"><?=( $forbrug[$i]['firmanavn2'] )? $forbrug[$i]['firmanavn2']:$forbrug[$i]['bruger_navn']?></a> 
+            class="tabelText"><?=( $forbrug[$i]['navn'] )? $forbrug[$i]['navn']:$forbrug[$i]['bruger_navn']?></a> 
           </td>
           <td class="tabelText"><?=$forbrug[$i]['title']?></td>
           <td class="tabelText"><?=$forbrug[$i]['url']?></td>

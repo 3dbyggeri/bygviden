@@ -10,17 +10,18 @@ if( $_POST['usersubmited'] )
   #$bruger->setBrugerNavn( $_POST['bruger_navn'] );
   $bruger->setMedlemsNr( $_POST['medlemsnr'] );
   $bruger->setActive( $_POST['active'] );
-  $bruger->setFirmanavn1( $_POST['firmanavn1'] );
-  $bruger->setFirmanavn2( $_POST['firmanavn2'] );
-  $bruger->setFirmanavn3( $_POST['firmanavn3'] );
+  $bruger->setFirma( $_POST['firma'] );
+  $bruger->setNavn( $_POST['navn'] );
+  $bruger->setTitel( $_POST['titel'] );
   $bruger->setGade( $_POST['gade'] );
   $bruger->setSted( $_POST['sted'] );
   $bruger->setPostnr( $_POST['postnr'] );
   $bruger->setCity( $_POST['city'] );
   $bruger->setLand( $_POST['land'] );
+  $bruger->setTlf( $_POST['tlf'] );
   $bruger->setEmail( $_POST['email'] );
 
-  $full_name =  $_POST['firmanavn1'] .' '. $_POST['firmanavn2'] .' '. $_POST['firmanavn3'];
+  $full_name =  $_POST['firma'] .' '. $_POST['navn'] .' '. $_POST['titel'];
   $_SESSION['bruger_navn'] = ( trim( $full_name ) )? $full_name:$_POST['bruger_navn'];
 
   $message = 'Indstillinger er gemt ( '. date('H:i:s') .' )';
@@ -61,15 +62,15 @@ $props = $bruger->loadBruger();
   <table cellpadding="0" cellspacing="0" border="0">
     <tr style="padding-bottom:5px;">
       <td class="label">Firmanavn:</td>
-      <td style="padding-left:5px;"><input class="login_input" type="text" name="firmanavn1" value="<?=$props['firmanavn1']?>"></td>
+      <td style="padding-left:5px;"><input class="login_input" type="text" name="firma" value="<?=$props['firma']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">
       <td class="label">Navn:</td>
-      <td style="padding-left:5px;"><input class="login_input" type="text" name="firmanavn2" value="<?=$props['firmanavn2']?>"></td>
+      <td style="padding-left:5px;"><input class="login_input" type="text" name="navn" value="<?=$props['navn']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">
       <td class="label">Titel:</td>
-      <td style="padding-left:5px;"><input class="login_input" type="text" name="firmanavn3" value="<?=$props['firmanavn3']?>"></td>
+      <td style="padding-left:5px;"><input class="login_input" type="text" name="titel" value="<?=$props['titel']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">
       <td class="label">Gade:</td>
@@ -86,6 +87,10 @@ $props = $bruger->loadBruger();
     <tr style="padding-bottom:5px;">
       <td class="label">Land:</td>
       <td style="padding-left:5px;"><input class="login_input" type="text" name="land" value="<?=$props['land']?>"></td>
+    </tr>
+    <tr style="padding-bottom:5px;">
+      <td class="label">Telefon:</td>
+      <td style="padding-left:5px;"><input class="login_input" type="text" name="tlf" value="<?=$props['tlf']?>"></td>
     </tr>
     <tr style="padding-bottom:5px;">
       <td class="label">Email:</td>
