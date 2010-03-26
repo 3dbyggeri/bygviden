@@ -423,6 +423,7 @@ a.visited { color:#666; }
 #varer ul {list-style:none;padding:0;margin:0;margin:10px;}
 #varer li {margin-bottom:5px;}
 #varer span {font-size:10px;margin-left:4px;}
+#varer em {margin-left:4px;color:#666;}
 
 #varer a { color:#C8081D;text-decoration:none;
                padding-right:12px;

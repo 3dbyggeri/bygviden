@@ -36,6 +36,7 @@ Class BuildInRESTClient
         array_push($result, array(
           'id' => $product->id.'', // make sure it's a string
           'name' => utf8_decode($product->name.''), // make sure it's a string
+          'generic_name' => utf8_decode($product->{"generic-name"}.''), // make sure it's a string
           'description' => utf8_decode($product->{"short-description"}.''), // make sure it's a string
           'home_page' => $_SERVER['REQUEST_URI'] . "&id=" . $product->id,
           'logo_url' => $logo_url,
@@ -130,6 +131,7 @@ Class BuildInRESTClient
         $product = array(
           'id' => $product->id.'', // make sure it's a string
           'name' => utf8_decode($product->name.''), // make sure it's a string
+          'generic_name' => utf8_decode($product->{"generic-name"}.''), // make sure it's a string
           'description' => utf8_decode($product->{"short-description"}.''), // make sure it's a string
           'home_page' => $_SERVER['HOST'] . "/index.php?action=products&section=produkter&id=" . $product->id,
           'logo_url' => $logo_url
@@ -210,6 +212,7 @@ Class BuildInRESTClient
         $product = array(
           'id' => $product->id.'', // make sure it's a string
           'name' => utf8_decode($product->name.''), // make sure it's a string
+          'generic_name' => utf8_decode($product->{"generic-name"}.''), // make sure it's a string
           'description' => utf8_decode($product->{"short-description"}.''), // make sure it's a string
           'home_page' => $_SERVER['HOST'] . "/index.php?action=products&section=produkter&id=" . $product->id,
           'logo_url' => $logo_url

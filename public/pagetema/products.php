@@ -193,7 +193,7 @@ class Produkter extends View
     if($url) $str.='<a href="'.$url.'">';
     $str.= $product['name'];
     if($url) $str.='</a>';  
-    $str.='</strong></p>';
+    $str.='</strong> <em class="generic_name">'.$product['generic_name'].'</em></p>';
     
     if($product['description']) $str.='<p>'. $product['description'] .'</p>';
     if($product['observation']) $str.='<p bgcolor="#ff9900">'. $product['observation'] .'</p>';
