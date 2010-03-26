@@ -167,21 +167,7 @@ $add_key_word = urlencode($add_key_word);
 
                     </td>
                     <td valign="top" id="right_content">
-                        <?=$page->rightMenu()?>
-
-                        <div id="rightgoogleadd" style="margin-left:15px">
-                        	<script type="text/javascript"><!--
-													google_ad_client = "pub-9171964576337297";
-													/* Front page */
-													google_ad_slot = "7478564993";
-													google_ad_width = 180;
-													google_ad_height = 150;
-													//-->
-													</script>
-													<script type="text/javascript"
-													src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-													</script>
-                        </div>
+                    <?=$page->rightMenu()?>
                     </td>
                </tr>
             </table>
