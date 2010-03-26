@@ -14,24 +14,7 @@ class Produkter extends View
 
   function rightmenu()
   {
-    // hide google ads if this is a product page
-    if($_REQUEST['section']=='produkter' && $_REQUEST['id']){
-      return '<style>#rightgoogleadd {display:none;}</style>';
-    } else {
-      return '<style>#rightgoogleadd {display:none;}</style>
-              <div style="margin-top:10px;margin-left:15px;">
-            	<script type="text/javascript"><!--
-							google_ad_client = "pub-9171964576337297";
-							/* LandingsPageRightHightFormat */
-							google_ad_slot = "6156729202";
-							google_ad_width = 160;
-							google_ad_height = 600;
-							//-->
-							</script>
-							<script type="text/javascript"
-							src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-							</script></div>';
-		}
+    // this used to contain google ads
   }
 
   function Produkter()

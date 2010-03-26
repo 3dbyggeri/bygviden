@@ -342,19 +342,19 @@ class Bibliotek extends View
   }
   function adds()
   {
-      return '<style>#rightgoogleadd {display:none; }</style>
-              <div style="margin-top:10px;margin-left:15px;">
-              	<script type="text/javascript"><!--
-								google_ad_client = "pub-9171964576337297";
-								/* LandingsPageRightHightFormat */
-								google_ad_slot = "6156729202";
-								google_ad_width = 160;
-								google_ad_height = 600;
-								//-->
-								</script>
-								<script type="text/javascript"
-								src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-								</script></div>';
+      // return '<style>#rightgoogleadd {display:none; }</style>
+      //         <div style="margin-top:10px;margin-left:15px;">
+      //          <script type="text/javascript"><!--
+      //                google_ad_client = "pub-9171964576337297";
+      //                /* LandingsPageRightHightFormat */
+      //                google_ad_slot = "6156729202";
+      //                google_ad_width = 160;
+      //                google_ad_height = 600;
+      //                //-->
+      //                </script>
+      //                <script type="text/javascript"
+      //                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      //                </script></div>';
   }
   function Content()
   {

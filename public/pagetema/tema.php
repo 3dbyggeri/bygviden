@@ -139,19 +139,19 @@ class Tema extends View
              <embed src="img/ads/260x250_SBS.swf" width="260" height="250" FlashVars="clickTAG=http://www.energikoncept.dk"></embed>
       </object>';
     
-      return $str.= '<style>#rightgoogleadd {display:none; }</style>
-              <div style="margin-top:10px;margin-left:15px;">
-              <script type="text/javascript"><!--
-              google_ad_client = "pub-6194810790403167";
-              /* LandingsPageRightHightFormat */
-              google_ad_slot = "7468654187";
-              google_ad_width = 160;
-              google_ad_height = 600;
-              //-->
-              </script>
-              <script type="text/javascript"
-              src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script></div>';
+      // return $str.= '<style>#rightgoogleadd {display:none; }</style>
+      //         <div style="margin-top:10px;margin-left:15px;">
+      //         <script type="text/javascript"><!--
+      //         google_ad_client = "pub-6194810790403167";
+      //         /* LandingsPageRightHightFormat */
+      //         google_ad_slot = "7468654187";
+      //         google_ad_width = 160;
+      //         google_ad_height = 600;
+      //         //-->
+      //         </script>
+      //         <script type="text/javascript"
+      //         src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      //         </script></div>';
   }
   
   function intro()
