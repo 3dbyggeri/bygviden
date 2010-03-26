@@ -37,7 +37,7 @@ Class BuildInRESTClient
           'id' => $product->id.'', // make sure it's a string
           'name' => utf8_decode($product->name.''), // make sure it's a string
           'description' => utf8_decode($product->{"short-description"}.''), // make sure it's a string
-          'home_page' => $_SERVER['REQUEST_URI'] . "&id=" . $product->id,
+          'home_page' => $_SERVER['REQUEST_URI'] . "&buildin=/products/" . $product->id,
           'logo_url' => $logo_url,
           'producer_name' => utf8_decode($product->{"owner-name"}.''), // make sure it's a string
           'producer_id' => $product->{"owner-id"}.'' // make sure it's a string
