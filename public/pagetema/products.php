@@ -273,8 +273,8 @@ class Produkter extends View
     // $s.='</div>';
     
     $s = '  <div id="buildin"></div>';
-    $s.= '  <link href="http://n3eh0gagikpys3bjapuiz5gudqvc60.embed.dpk.local/embed.css" media="screen" rel="stylesheet" type="text/css" />'; 
-    $s.= '  <script src="http://n3eh0gagikpys3bjapuiz5gudqvc60.embed.dpk.local/embed.js" type="text/javascript"></script>';
+    $s.= '  <link href="http://'.$this->products->api_key.'.embed.'.$this->products->host.'/embed.css" media="screen" rel="stylesheet" type="text/css" />'; 
+    $s.= '  <script src="http://'.$this->products->api_key.'.embed.'.$this->products->host.'/embed.js" type="text/javascript"></script>';
     
     return $s;
   }
