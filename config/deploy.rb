@@ -3,6 +3,7 @@ set :stages, %w(local qa production) # defaults to just staging and production
 require 'capistrano/ext/multistage'
 
 set :repository, "git@github.com:3dbyggeri/bygviden.git"
+set :branch, (variables[:branch].class == String ? variables[:branch] : "master")
 
 set :user, "bygviden" # log in as
 set :runner, "bygviden" # run processes as
@@ -20,9 +21,9 @@ namespace :deploy do
     migrate
   end
 
-  desc "[internal] Pull a new version of the master branch"
+  desc "[internal] Pull a new version of the #{branch} branch"
   task :update do
-    run "cd #{deploy_to}; git pull origin master"
+    run "cd #{deploy_to}; git pull origin #{branch}"
   end
 
   desc "Run pending migrations"
