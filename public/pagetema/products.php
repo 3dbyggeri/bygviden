@@ -235,7 +235,7 @@ class Produkter extends View
     }
     return $s.'</div>';
   }
-  function getProduct($id)
+  function getProduct()
   {
     // $s = '<h1>';
    
@@ -255,19 +255,10 @@ class Produkter extends View
     // $s.= $this->getProducentInfo(); 
     // $s.='</div>';
     
-    $s.= '  <div id="buildin-embedded-catalogue"></div>';
-    $s.= '  <script>';
-    $s.= '  var buildinBaseUrl = "http://' . $this->products->api_key . '.embed.' . $this->products->host . '";';
-    $s.= '  var buildinStartpage = "/products/' . $id . '";';
-    $s.= '  (function() {';
-    $s.= '    var headElement = document.getElementsByTagName("head")[0];';
-    $s.= '    var script = document.createElement("script");';
-    $s.= '    script.language="javascript";';
-    $s.= '    script.src = "' . $this->products->protocol . $this->products->api_key . '.embed.' . $this->products->host . '/javascripts/embed-client.js";';
-    $s.= '    headElement.appendChild(script);';
-    $s.= '  })();';
-    $s.= '  </script>';
-    $s.= '</div>';
+    $s = '  <div id="buildin"></div>';
+    $s.= '  <link href="http://'.$this->products->api_key.'.embed.'.$this->products->host.'/embed.css" media="screen" rel="stylesheet" type="text/css" />'; 
+    $s.= '  <script src="http://'.$this->products->api_key.'.embed.'.$this->products->host.'/embed.js" type="text/javascript"></script>';
+    
     return $s;
   }
   function producenter()
@@ -376,7 +367,7 @@ class Produkter extends View
   }
   function producter()
   {
-    if($_REQUEST['id']) return $this->getProduct($_REQUEST['id']); 
+    if($_REQUEST['buildin']) return $this->getProduct(); 
 
     $produkter = $this->products->loadProducts($_REQUEST['l']);
     $initial = $this->translateInitial($_REQUEST['l']);
@@ -503,34 +494,19 @@ class Produkter extends View
   }
   function LeftMenu()
   {
-    if($_REQUEST['section']=='produkter' && $_REQUEST['id']){
-      $str = '<div id="left_menu" style="position:absolute;top:94px;left:0px;padding:4px 10px; background-color:#001C43;width:100%;height:15px;">
-                <ul id="tema_menu" style="display:inline;margin-left:123px;">';
-      $count = 0;
-      foreach($this->menu as $key=>$value)
-      {
-        $sel = ($key == $this->getCurrentItem())?'class="selected"':'';
-        $spacer = ($count!=2)?'<span class="spacer">|</span>':'';
-        $str.= '<li style="display:inline;"><a href="/'.$this->page.$this->action.'&section='.$key.'" '.$sel.'>'. $value .'</a>'.$spacer.'</li>';
-        $count = $count+1;
-      }
-      $str.='</ul></div>';
-      return $str;
-    } else {
-      $str = '<div id="left_menu">
-                  <table cellpadding="0" cellspacing="0" border="0">
-                      <tr>
-                          <td><img src="graphics/transp.gif" width="10" height="300" /></td>
-                          <td valign="top">
-                              <ul id="tema_menu">';
-      foreach($this->menu as $key=>$value)
-      {
-        $sel = ($key == $this->getCurrentItem())?'class="selected"':'';
-        $str.= '<li><a href="/'.$this->page.$this->action.'&section='.$key.'" '.$sel.'>'. $value .'</a></li>';
-      }
-      $str.='</ul></td></tr></table></div>';
-      return $str;
+    $str = '<div id="left_menu">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td><img src="graphics/transp.gif" width="10" height="300" /></td>
+                        <td valign="top">
+                            <ul id="tema_menu">';
+    foreach($this->menu as $key=>$value)
+    {
+      $sel = ($key == $this->getCurrentItem())?'class="selected"':'';
+      $str.= '<li><a href="/'.$this->page.$this->action.'&section='.$key.'" '.$sel.'>'. $value .'</a></li>';
     }
+    $str.='</ul></td></tr></table></div>';
+    return $str;
   }
   function translateInitial($initial)
   {
