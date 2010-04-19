@@ -255,7 +255,7 @@ class Produkter extends View
     // $s.= $this->getProducentInfo(); 
     // $s.='</div>';
     
-    $s = '  <div id="buildin"></div>';
+    $s = '  <div id="buildin"><div id="buildin-menu"></div><div id="buildin-content"></div><div id="buildin-clear"></div></div>';
     $s.= '  <link href="http://'.$this->products->api_key.'.embed.'.$this->products->host.'/embed.css" media="screen" rel="stylesheet" type="text/css" />'; 
     $s.= '  <script src="http://'.$this->products->api_key.'.embed.'.$this->products->host.'/embed.js" type="text/javascript"></script>';
     
