@@ -180,7 +180,7 @@ class Bibliotek extends View
 
       if(!$cats[$rec['kat_id']]) 
       {
-        $cats[$rec['kat_id']] = array('name'=>$rec['kat_name'],'publications'=>array());
+        $cats[$rec['kat_id']] = array('name'=>$rec['kat_name'],'description'=>$rec['samlet_description'],'publications'=>array());
       }
       $cats[$rec['kat_id']]['publications'][count($cats[$rec['kat_id']]['publications'])] = $rec;
     }
@@ -219,9 +219,13 @@ class Bibliotek extends View
           }
           else
           {
+            $summary = '';
+            if($value['description']){ $summary = '<p>'. stripslashes($value['description']) .'</p>'; }
+              
               $str.= '<tr >
                     <td colspan="2" align="left" class="category">
-                        '. $pub_count . $img . $value['name'] .'
+                        <h2>'. $pub_count . $img . $value['name'] .'</h2>
+                        '.$summary.'
                     </td>
                 </tr>';
           }

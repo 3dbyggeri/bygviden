@@ -328,6 +328,7 @@ body td { font-family:arial,sans-serif; }
 }
 #poster { margin:20px;margin-top:0; }
 #poster .category { text-transform:uppercase;font-weight:900;color:#666;padding-top:8px;}
+#poster .category p { text-transform:none;font-weight:normal;color:#000;margin-left:10px;}
 .category a { text-decoration:none; }
 
 #poster .title 
