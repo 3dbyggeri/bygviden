@@ -91,18 +91,18 @@
     </td>
     <td>
       <?if(!$_GET['searching']):?>
-        <a href="<?=$_SERVER['PHP_SELF']?>?sorting_colum=bruger_navn&sorting_order=<?=( $_SESSION['sorting_order'] == 'asc' )?'desc':'asc'?>" class="tabelText">Bruger navn</a>
+        <a href="<?=$_SERVER['PHP_SELF']?>?sorting_colum=bruger_navn&sorting_order=<?=( $_SESSION['sorting_order'] == 'asc' )?'desc':'asc'?>" class="tabelText">Login</a>
         <?=( $_SESSION['sorting_colum'] == 'bruger_navn' )? $pil:'' ?>
       <?else:?>
-        <span class="tabelText">Bruger navn</span>
+        <span class="tabelText">Login</span>
       <?endif?>
     </td>
     <td>
       <?if(!$_GET['searching']):?>
-        <a href="<?=$_SERVER['PHP_SELF']?>?sorting_colum=navn&sorting_order=<?=( $_SESSION['sorting_order'] == 'asc' )?'desc':'asc'?>" class="tabelText">Firmanavn (2)</a>
+        <a href="<?=$_SERVER['PHP_SELF']?>?sorting_colum=navn&sorting_order=<?=( $_SESSION['sorting_order'] == 'asc' )?'desc':'asc'?>" class="tabelText">Navn</a>
         <?=( $_SESSION['sorting_colum'] == 'navn' )? $pil:'' ?>
       <?else:?>
-        <span class="tabelText">Firmanavn (2)</span>
+        <span class="tabelText">Navn</span>
       <?endif?>
     </td>
     <td>
@@ -129,6 +129,14 @@
         <span class="tabelText">Mester</span>
       <?endif?>
     </td>
+    <td>
+      <?if(!$_GET['searching']):?>
+        <a href="<?=$_SERVER['PHP_SELF']?>?sorting_colum=temaeditor&sorting_order=<?=( $_SESSION['sorting_order'] == 'asc' )?'desc':'asc'?>" class="tabelText">Temaredaktør</a>
+        <?=( $_SESSION['sorting_colum'] == 'temaeditor' )? $pil:'' ?>
+      <?else:?>
+        <span class="tabelText">Temaredaktør</span>
+      <?endif?>
+    </td>
     <td>&nbsp;</td>
   </tr>
   <?for( $i = 0; $i< count( $brugerne ); $i++ ):?>
@@ -152,6 +160,9 @@
     <td class="tabelText">
       <img src="../graphics/<?=( $brugerne[$i]['parent'] )?'un_checked':'checked'?>.gif" width="9" height="9">
     </td>
+    <td class="tabelText">
+      <img src="../graphics/<?=( $brugerne[$i]['temaeditor'] == 'y' )?'checked':'un_checked'?>.gif" width="9" height="9">
+    </td>
     <td align="right">
       <a href="<?=$_SERVER['PHP_SELF']?>?delete=<?=$brugerne[$i]["id"]?>" onclick="return confirm('Er du sikker på at du vil slette denne bruger. Denne handling kan ikke fortrydes!')" class="tabelText">[x]</a>
       <img src="../graphics/transp.gif" width="5">
@@ -161,7 +172,7 @@
 
   <?if(!$_GET['searching']):?>
   <tr>
-    <td colspan="6" class="tabelText" align="center">
+    <td colspan="7" class="tabelText" align="center">
       <?
         $total_brugerne = $bruger->getTotal();
         // find number of pages
@@ -200,17 +211,14 @@
   </tr>
   <?endif?>
   <tr>
-    <td colspan="5"><img src="../graphics/transp.gif" height="15"></td>
+    <td colspan="7"><img src="../graphics/transp.gif" height="15"></td>
   </tr>
   <tr>
-    <td class="small_header">&nbsp;</td>
-    <td class="small_header">&nbsp;</td>
-    <td class="header" align="right">					
-      <input onclick="document.location.href='<?=$_SERVER['PHP_SELF']?>?pane=<?=$pane?>&add=1'" type="button" value="Tilføj bruger" class="knap" style="width:100px">
-      &nbsp;&nbsp;
+    <td class="header" align="right" colspan="7">					
+      <input onclick="document.location.href='<?=$_SERVER['PHP_SELF']?>?pane=<?=$pane?>&add=1'" type="button" value="Tilføj bruger" class="knap" style="width:100px" />
     </td>
   </tr>
   <tr>
-    <td colspan="5"><img src="../graphics/transp.gif" height="15"></td>
+    <td colspan="7"><img src="../graphics/transp.gif" height="15"></td>
   </tr>
 </table>

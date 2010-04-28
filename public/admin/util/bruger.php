@@ -372,6 +372,7 @@ class bruger
                 active,
                 gratist,
                 parent,
+                temaeditor,
                 firma,
                 navn,
                 titel
