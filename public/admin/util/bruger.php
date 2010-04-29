@@ -618,6 +618,7 @@ class bruger
                        $pris,
                        $periode )
     {
+        $bruger_id = ($this->id == '') ? "NULL" : $this->id;
         $sql = "INSERT INTO 
                   ". $this->p."usage 
                 (
@@ -631,7 +632,7 @@ class bruger
                 )
                 VALUES
                 (
-                   ". $this->id ."
+                   ". $bruger_id ."
                   ,". $publication_id ."
                   ,'".$url."'
                   ,'".$title."'
