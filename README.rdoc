@@ -15,9 +15,6 @@ To access the admin interface browse the /admin url.
 
 [public/admin/]             Administration interface
 
-[public/bibs/]              vidensleverandøraftale - maybe not used 
-                            anymore
-
 [public/BV_/]               Autonomy stuff - not used anymore
 
 [public/chimp/]             MailChimp library / module
@@ -50,10 +47,6 @@ To access the admin interface browse the /admin url.
 
 [public/TMP/]               Temp folder (maybe used by PDF generator) - 
                             maybe not used anymore
-
-[public/tolerancer/]        Misc images actually used by the 
-                            tolerancer.dk domain (should not be hosted 
-                            here!)
 
 [public/users/]             Frontend core - User management
 
