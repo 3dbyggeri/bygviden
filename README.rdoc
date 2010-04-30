@@ -27,10 +27,6 @@ To access the admin interface browse the /admin url.
 
 [public/nyhedsbrev/]        Newsletter stuff - maybe not used anymore
 
-[public/page/]              Frontend core - Used to showing pages - 
-                            maybe not used anymore (pagetema is used 
-                            instead)
-
 [public/pagetema/]          Frontend core - Used to showing pages
 
 [public/product_images/]    Product images

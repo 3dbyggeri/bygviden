@@ -3,9 +3,9 @@ require_once('admin/util/bruger.php');
 require_once('admin/util/dba.php');
 include_once('admin/util/paragraph.php');
 include_once('admin/util/tema.php');
-require_once('page/page.php');
+require_once('pagetema/page.php');
 //require_once('page/search.php');
-include_once('page/aci.php');
+include_once('pagetema/aci.php');
 require_once('pagetema/publication.php');
 require_once('config.php');
 
