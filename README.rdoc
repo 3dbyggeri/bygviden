@@ -15,8 +15,6 @@ To access the admin interface browse the /admin url.
 
 [public/admin/]             Administration interface
 
-[public/BACK1/]             Autonomy stuff - not used anymore
-
 [public/BANNER_ADMIN/]      Ad management interface (so the sales people 
                             can log in and manage campaigns) - maybe not 
                             used anymore
