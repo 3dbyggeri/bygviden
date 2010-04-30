@@ -15,11 +15,7 @@ To access the admin interface browse the /admin url.
 
 [public/admin/]             Administration interface
 
-[public/BV_/]               Autonomy stuff - not used anymore
-
 [public/chimp/]             MailChimp library / module
-
-[public/DEV/]               Screencast - not used anymore
 
 [public/FREE_BYG_CONTENT/]  Free content not hosted by the owner
 
