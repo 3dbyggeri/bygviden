@@ -15,10 +15,6 @@ To access the admin interface browse the /admin url.
 
 [public/admin/]             Administration interface
 
-[public/BANNER_ADMIN/]      Ad management interface (so the sales people 
-                            can log in and manage campaigns) - maybe not 
-                            used anymore
-
 [public/bibs/]              vidensleverandøraftale - maybe not used 
                             anymore
 
