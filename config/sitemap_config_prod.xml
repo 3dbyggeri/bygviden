@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  sitemap_gen.py example configuration script
-
-  This file specifies a set of sample input parameters for the
-  sitemap_gen.py client.
-
-  You should copy this file into "config.xml" and modify it for
-  your server.
-
+  execute the following command on the server to generate the sitemap:
+  python /usr/local/lib/python2.5/site-packages/sitemap_gen.pyc --config=/usr/home/bygviden/bygviden_prod/config/sitemap_config_prod.xml
+  
+  To view the result, unzip the sitemap file to stdout:
+  gunzip -dc /usr/home/bygviden/bygviden_prod/public/sitemap.xml.gz
 
   ********************************************************* -->
 
@@ -57,8 +54,8 @@
 
     Optional attributes:
       encoding   - encoding of the file if not US-ASCII
-  <urllist  path="example_urllist.txt"  encoding="UTF-8"  />
   -->
+  <urllist  path="urllist_prod.txt"  encoding="UTF-8"  />
 
 
   <!-- ** MODIFY or DELETE **
