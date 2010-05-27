@@ -73,8 +73,8 @@
       encoding   - encoding of the file if not US-ASCII
   -->
   <accesslog  path="/var/log/apache22/2010/05/access.log.2010.05.23" encoding="UTF-8"  />
-  <accesslog  path="/var/log/apache22/2010/05/access.log.2010.05.24" encoding="UTF-8"  />
   <accesslog  path="/var/log/apache22/2010/05/access.log.2010.05.25" encoding="UTF-8"  />
+  <accesslog  path="/var/log/apache22/2010/05/access.log.2010.05.27" encoding="UTF-8"  />
 
 
   <!-- ** MODIFY or DELETE **
@@ -120,6 +120,14 @@
 
   <!-- Exclude URLs that end with a '~'   (IE: emacs backup files)      -->
   <filter  action="drop"  type="wildcard"  pattern="*~"           />
+
+  <!-- Exclude URLs that are scripts or images      -->
+  <filter  action="drop"  type="wildcard"  pattern="*.gif"           />
+  <filter  action="drop"  type="wildcard"  pattern="*.png"           />
+  <filter  action="drop"  type="wildcard"  pattern="*.jpg"           />
+  <filter  action="drop"  type="wildcard"  pattern="*.swf"           />
+  <filter  action="drop"  type="wildcard"  pattern="*.js"           />
+  <filter  action="drop"  type="wildcard"  pattern="*.css"           />
 
   <!-- Exclude URLs within UNIX-style hidden files or directories       -->
   <filter  action="drop"  type="regexp"    pattern="/\.[^/]*"     />
