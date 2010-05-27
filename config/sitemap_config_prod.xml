@@ -125,9 +125,14 @@
   <filter  action="drop"  type="wildcard"  pattern="*.png"           />
   <filter  action="drop"  type="wildcard"  pattern="*.jpg"           />
   <filter  action="drop"  type="wildcard"  pattern="*.swf"           />
-  <filter  action="drop"  type="wildcard"  pattern="*.js"           />
+  <filter  action="drop"  type="wildcard"  pattern="*.js"            />
   <filter  action="drop"  type="wildcard"  pattern="*.css"           />
   <filter  action="drop"  type="wildcard"  pattern="*.ico"           />
+  <filter  action="drop"  type="wildcard"  pattern="*robots.txt"     />
+  <filter  action="drop"  type="wildcard"  pattern="*error.php*"     />
+  <filter  action="drop"  type="wildcard"  pattern="*document.php*"  />
+  <filter  action="drop"  type="wildcard"  pattern="*retrieve.php*"  />
+  <filter  action="drop"  type="wildcard"  pattern="*admin*"         />
 
   <!-- Exclude URLs within UNIX-style hidden files or directories       -->
   <filter  action="drop"  type="regexp"    pattern="/\.[^/]*"     />
