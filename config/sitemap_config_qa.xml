@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   execute the following command on the server to generate the sitemap:
-  python /usr/local/lib/python2.5/site-packages/sitemap_gen.pyc --config=/usr/home/bygviden/bygviden_qa/config/sitemap_config_qa.xml
+  python /usr/local/lib/python2.5/site-packages/sitemap_gen.pyc
+  Add the config parameter as follows:
+  /usr/home/bygviden/bygviden_qa/config/sitemap_config_qa.xml
 
   To view the result, unzip the sitemap file to stdout:
   gunzip -dc /usr/home/bygviden/bygviden_qa/public/sitemap.xml.gz
