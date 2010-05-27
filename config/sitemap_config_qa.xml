@@ -126,6 +126,7 @@
   <filter  action="drop"  type="wildcard"  pattern="*.swf"           />
   <filter  action="drop"  type="wildcard"  pattern="*.js"           />
   <filter  action="drop"  type="wildcard"  pattern="*.css"           />
+  <filter  action="drop"  type="wildcard"  pattern="*.ico"           />
 
   <!-- Exclude URLs within UNIX-style hidden files or directories       -->
   <filter  action="drop"  type="regexp"    pattern="/\.[^/]*"     />
