@@ -57,7 +57,7 @@
     Optional attributes:
       encoding   - encoding of the file if not US-ASCII
   -->
-  <urllist  path="urllist_qa.txt"  encoding="UTF-8"  />
+  <urllist  path="/usr/home/bygviden/bygviden_qa/config/urllist_qa.txt"  encoding="UTF-8"  />
 
 
   <!-- ** MODIFY or DELETE **
@@ -134,6 +134,10 @@
   <filter  action="drop"  type="wildcard"  pattern="*TIL_BYG_CONTENT*"  />
   <filter  action="drop"  type="wildcard"  pattern="*FREE_BYG_CONTENT*" />
   <filter  action="drop"  type="wildcard"  pattern="*action=search*"    />
+  <filter  action="drop"  type="wildcard"  pattern="*/nyhedsbrev/*"     />
+  <filter  action="drop"  type="wildcard"  pattern="*/pagetema/*"       />
+  <filter  action="drop"  type="wildcard"  pattern="*/tema/*"           />
+  <filter  action="drop"  type="wildcard"  pattern="*/?PHPSESSID*"      />
 
   <!-- Exclude URLs within UNIX-style hidden files or directories       -->
   <filter  action="drop"  type="regexp"    pattern="/\.[^/]*"     />
