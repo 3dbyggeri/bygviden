@@ -234,6 +234,5 @@ pageTracker._trackPageview();
 }
 ?>
 
-<script src="http://www.surveymonkey.com/jsPop.aspx?sm=BGjxJMMUMswXIJ4XGqpRjA_3d_3d"> </script>
     </body>
 </html>
